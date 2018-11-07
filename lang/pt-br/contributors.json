@@ -1,0 +1,42 @@
+[
+    {
+        "country": "us",
+        "name": "David Scharf",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus qui debitis repellendus suscipit numquam cumque facilis praesentium adipisci, quidem laborum deserunt.",
+        "jobRole": "Ambassador",
+        "twitter": "https://twitter.com",
+        "telegram": "",
+        "avatar": "https://picsum.photos/128/128/?image=1043",
+        "pos": {"x": 147, "y": 274}
+    },
+    {
+        "country": "br",
+        "name": "João da Silva",
+        "description": "Temporibus qui debitis repellendus suscipit numquam cumque facilis praesentium adipisci, quidem laborum deserunt recusandae tempore excepturi architecto, aut ipsa omnis eos perferendis.",
+        "jobRole": "Contributor",
+        "twitter": "",
+        "telegram": "https://telegram.com",
+        "avatar": "https://picsum.photos/128/128/?image=545",
+        "pos": {"x": 360, "y": 520}
+    },
+    {
+        "country": "au",
+        "name": "John Doe",
+        "description": "Sectetur adipisicing elit. Temporibus qui debiti. Lorem ipsum dolor sit amet cons reusandae tempore excepturi architecto, aut ipsa omnis eos perferendis.",
+        "jobRole": "Ambassador",
+        "twitter": "https://twitter.com",
+        "telegram": "https://telegram.com",
+        "avatar": "https://picsum.photos/128/128/?image=1065",
+        "pos": {"x": 180, "y": 300}
+    },
+    {
+        "country": "pt",
+        "name": "Steve Rogers",
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium, similique quae! Dolorum numquam minima odio consequatur omnis.",
+        "jobRole": "Capitão",
+        "twitter": "",
+        "telegram": "",
+        "avatar": "https://picsum.photos/128/128/?image=1064",
+        "pos": {"x": 650, "y": 286}
+    }
+]

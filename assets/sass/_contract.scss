@@ -1,0 +1,39 @@
+#contract {
+    margin-bottom: 100px;
+    text-align: center;
+    .gist {
+        width: auto;
+        max-width: 100% !important;
+        padding: 25px 25px 15px 25px;
+        background: $white;
+        display: inline-table;
+        border-radius: 20px;
+        iframe {
+            border-radius: 10px;
+            max-width: 100%;
+            width: 750px;
+            overflow: auto;
+        }
+        .gist-bottom {
+            text-align: left;
+            h5.gist-verified {
+                color: darken($blue, 20%);
+                font-weight: 700;
+                font-size: 0.9em;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    #contract .gist {
+        padding: 15px 15px 10px 15px;
+    }
+    #smart-contracts {
+        #contract-buttons {
+            text-align: center;
+        }
+    }
+}

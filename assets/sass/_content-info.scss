@@ -1,0 +1,43 @@
+.content-info {
+    width: 100%;
+    display: table;
+    margin-bottom: 50px;
+    margin-top: 50px;
+
+    p.content-subtitle{
+        background-image: url(/img/mini-icon.png);
+        background-repeat: no-repeat;
+        background-position: left 3px;
+        display: inline-block;
+        text-transform: uppercase;
+        font-size: 0.8em;
+        letter-spacing: 0.5em;
+        margin: 0 0 0 1px;
+        padding: 0 0 0 30px;
+        color: $white;
+        font-weight: 600;
+    }
+
+    h2.content-title {
+        text-transform: uppercase;
+        margin: 10px 0 30px 0;
+        font-size: 1.8em;
+        letter-spacing: 0.1em;
+        color: $white;
+    }
+
+    p.content-text {
+        color: mix($dark-blue, $white, 50%);
+        font-size: 0.93em;
+        margin-bottom: 25px;
+    }
+
+    p.content-tags {
+        text-transform: uppercase;
+        font-size: 0.75em;
+        color: $white;
+        font-weight: 600;
+        line-height: 1.9em;
+        letter-spacing: 0.15em;
+    }
+}

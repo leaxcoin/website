@@ -1,0 +1,50 @@
+.leax-icon-box {
+    display: flex;
+    align-items: center;
+    height: auto;
+    justify-content: center;
+
+    .leax-icon-text {
+        display: flex;
+        align-self: center;
+        margin-left: 15px;
+        align-items: stretch;
+        flex-direction: column;
+        h4 {
+            align-self: stretch;
+            font-size: 0.9em;
+            font-weight: 700;
+            line-height: 200%;
+            margin-bottom: 0;
+            text-transform: uppercase;
+        }
+        p {
+            align-self: stretch;
+            font-size: 0.9em;
+            line-height: 150%;
+            color: mix($dark-blue, $white, 50%);
+        }
+    }
+
+    .leax-icon {
+        display: flex;
+        align-self: center;
+        width: 80px;
+        height: 80px;
+        flex: 0 0 80px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: mix($sky-blue, $dark-blue, 20%);
+        border-radius: 15px;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@include media-breakpoint-down(xs) {
+    .leax-icon-box {
+        justify-content: left;
+        align-items: left;
+        margin-bottom: 30px;
+    }
+}

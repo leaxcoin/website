@@ -1,0 +1,24 @@
+#community-support{
+    margin-top: 100px;
+    .main-image {
+        img {
+            margin-top: -50px
+        }
+    }
+}
+
+#community-support-icons{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+@include media-breakpoint-down(sm) {
+    #community-support{
+        margin-top: 100px;
+        .main-image {
+            img {
+                margin-top: 0;
+            }
+        }
+    }
+}

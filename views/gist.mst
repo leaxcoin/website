@@ -1,0 +1,752 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gist</title>
+    <style>
+        body {
+            margin: 0;
+            background: #1A1E2D;
+            box-sizing: border-box;
+        }
+
+        pre {
+            margin-top: 0;
+        }
+
+        .cont {
+            position: relative;
+        }
+
+        .container {
+            position: relative;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="cont">
+    <div class="container"><pre style='color:#d1d1d1;'>pragma solidity ^0.4.13<span style='color:#d2cd86; '>;</span>
+
+library SafeMath <span style='color:#b060b0; '>{</span>
+
+  <span style='color:#90b0e0; '>/**</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@</span><span
+                style='color:#90b0e0; '>dev Multiplies two numbers</span><span
+                style='color:#8695b8; font-weight:bold; '>,</span><span
+                style='color:#90b0e0; '> throws on overflow.</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;*/</span>
+  function mul<span style='color:#d2cd86; '>(</span>uint256 a<span style='color:#d2cd86; '>,</span> uint256 b<span
+                style='color:#d2cd86; '>)</span> internal pure returns <span
+                style='color:#d2cd86; '>(</span>uint256<span style='color:#d2cd86; '>)</span> <span
+                style='color:#b060b0; '>{</span>
+    <span style='color:#e66170; font-weight:bold; '>if</span> <span style='color:#d2cd86; '>(</span>a <span
+                style='color:#d2cd86; '>=</span><span style='color:#d2cd86; '>=</span> <span
+                style='color:#008c00; '>0</span><span style='color:#d2cd86; '>)</span> <span
+                style='color:#b060b0; '>{</span>
+      <span style='color:#e66170; font-weight:bold; '>return</span> <span style='color:#008c00; '>0</span><span
+                style='color:#b060b0; '>;</span>
+    <span style='color:#b060b0; '>}</span>
+    uint256 c <span style='color:#d2cd86; '>=</span> a <span style='color:#d2cd86; '>*</span> b<span
+                style='color:#b060b0; '>;</span>
+    assert<span style='color:#d2cd86; '>(</span>c <span style='color:#d2cd86; '>/</span> a <span
+                style='color:#d2cd86; '>=</span><span style='color:#d2cd86; '>=</span> b<span
+                style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>return</span> c<span style='color:#b060b0; '>;</span>
+  <span style='color:#b060b0; '>}</span>
+
+  <span style='color:#90b0e0; '>/**</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@</span><span
+                style='color:#90b0e0; '>dev Integer division of two numbers</span><span
+                style='color:#8695b8; font-weight:bold; '>,</span><span style='color:#90b0e0; '> truncating the quotient.</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;*/</span>
+  function div<span style='color:#d2cd86; '>(</span>uint256 a<span style='color:#d2cd86; '>,</span> uint256 b<span
+                style='color:#d2cd86; '>)</span> internal pure returns <span
+                style='color:#d2cd86; '>(</span>uint256<span style='color:#d2cd86; '>)</span> <span
+                style='color:#b060b0; '>{</span>
+    <span style='color:#9999a9; '>// assert(b > 0); // Solidity automatically throws when dividing by 0</span>
+    uint256 c <span style='color:#d2cd86; '>=</span> a <span style='color:#d2cd86; '>/</span> b<span
+                style='color:#b060b0; '>;</span>
+    <span style='color:#9999a9; '>// assert(a == b * c + a % b); // There is no case in which this doesn't hold</span>
+    <span style='color:#e66170; font-weight:bold; '>return</span> c<span style='color:#b060b0; '>;</span>
+  <span style='color:#b060b0; '>}</span>
+
+  <span style='color:#90b0e0; '>/**</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@</span><span
+                style='color:#90b0e0; '>dev Substracts two numbers</span><span
+                style='color:#8695b8; font-weight:bold; '>,</span><span
+                style='color:#90b0e0; '> throws on overflow (i</span><span style='color:#00a800; '>.</span><span
+                style='color:#90b0e0; '>e. if subtrahend is greater than minuend).</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;*/</span>
+  function sub<span style='color:#d2cd86; '>(</span>uint256 a<span style='color:#d2cd86; '>,</span> uint256 b<span
+                style='color:#d2cd86; '>)</span> internal pure returns <span
+                style='color:#d2cd86; '>(</span>uint256<span style='color:#d2cd86; '>)</span> <span
+                style='color:#b060b0; '>{</span>
+    assert<span style='color:#d2cd86; '>(</span>b <span style='color:#d2cd86; '>&lt;</span><span
+                style='color:#d2cd86; '>=</span> a<span style='color:#d2cd86; '>)</span><span
+                style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>return</span> a <span style='color:#d2cd86; '>-</span> b<span
+                style='color:#b060b0; '>;</span>
+  <span style='color:#b060b0; '>}</span>
+
+  <span style='color:#90b0e0; '>/**</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@</span><span
+                style='color:#90b0e0; '>dev Adds two numbers</span><span
+                style='color:#8695b8; font-weight:bold; '>,</span><span
+                style='color:#90b0e0; '> throws on overflow.</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;*/</span>
+  function add<span style='color:#d2cd86; '>(</span>uint256 a<span style='color:#d2cd86; '>,</span> uint256 b<span
+                style='color:#d2cd86; '>)</span> internal pure returns <span
+                style='color:#d2cd86; '>(</span>uint256<span style='color:#d2cd86; '>)</span> <span
+                style='color:#b060b0; '>{</span>
+    uint256 c <span style='color:#d2cd86; '>=</span> a <span style='color:#d2cd86; '>+</span> b<span
+                style='color:#b060b0; '>;</span>
+    assert<span style='color:#d2cd86; '>(</span>c <span style='color:#d2cd86; '>></span><span
+                style='color:#d2cd86; '>=</span> a<span style='color:#d2cd86; '>)</span><span
+                style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>return</span> c<span style='color:#b060b0; '>;</span>
+  <span style='color:#b060b0; '>}</span>
+<span style='color:#b060b0; '>}</span>
+
+contract Ownable <span style='color:#b060b0; '>{</span>
+  address <span style='color:#e66170; font-weight:bold; '>public</span> owner<span style='color:#b060b0; '>;</span>
+
+
+  event OwnershipTransferred<span style='color:#d2cd86; '>(</span>address indexed previousOwner<span
+                style='color:#d2cd86; '>,</span> address indexed newOwner<span style='color:#d2cd86; '>)</span><span
+                style='color:#b060b0; '>;</span>
+
+
+  <span style='color:#90b0e0; '>/**</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@</span><span
+                style='color:#90b0e0; '>dev The Ownable constructor sets the original `owner` of the contract to the sender</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> account.</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;*/</span>
+  function Ownable<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span
+                style='color:#e66170; font-weight:bold; '>public</span> <span style='color:#b060b0; '>{</span>
+    owner <span style='color:#d2cd86; '>=</span> msg<span style='color:#d2cd86; '>.</span>sender<span
+                style='color:#b060b0; '>;</span>
+  <span style='color:#b060b0; '>}</span>
+
+  <span style='color:#90b0e0; '>/**</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@</span><span
+                style='color:#90b0e0; '>dev Throws if called by any account other than the owner.</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;*/</span>
+  modifier onlyOwner<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span
+                style='color:#b060b0; '>{</span>
+    require<span style='color:#d2cd86; '>(</span>msg<span style='color:#d2cd86; '>.</span>sender <span
+                style='color:#d2cd86; '>=</span><span style='color:#d2cd86; '>=</span> owner<span
+                style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+    _<span style='color:#b060b0; '>;</span>
+  <span style='color:#b060b0; '>}</span>
+
+  <span style='color:#90b0e0; '>/**</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@</span><span
+                style='color:#90b0e0; '>dev Allows the current owner to transfer control of the contract to a newOwner.</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@param</span><span
+                style='color:#90b0e0; '> newOwner The address to transfer ownership to.</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;*/</span>
+  function transferOwnership<span style='color:#d2cd86; '>(</span>address newOwner<span style='color:#d2cd86; '>)</span> <span
+                style='color:#e66170; font-weight:bold; '>public</span> onlyOwner <span style='color:#b060b0; '>{</span>
+    require<span style='color:#d2cd86; '>(</span>newOwner <span style='color:#d2cd86; '>!</span><span
+                style='color:#d2cd86; '>=</span> address<span style='color:#d2cd86; '>(</span><span
+                style='color:#008c00; '>0</span><span style='color:#d2cd86; '>)</span><span
+                style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+    OwnershipTransferred<span style='color:#d2cd86; '>(</span>owner<span style='color:#d2cd86; '>,</span> newOwner<span
+                style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+    owner <span style='color:#d2cd86; '>=</span> newOwner<span style='color:#b060b0; '>;</span>
+  <span style='color:#b060b0; '>}</span>
+
+<span style='color:#b060b0; '>}</span>
+
+contract ERC20Basic <span style='color:#b060b0; '>{</span>
+  function totalSupply<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span
+                style='color:#e66170; font-weight:bold; '>public</span> view returns <span
+                style='color:#d2cd86; '>(</span>uint256<span style='color:#d2cd86; '>)</span><span
+                style='color:#b060b0; '>;</span>
+  function balanceOf<span style='color:#d2cd86; '>(</span>address who<span style='color:#d2cd86; '>)</span> <span
+                style='color:#e66170; font-weight:bold; '>public</span> view returns <span
+                style='color:#d2cd86; '>(</span>uint256<span style='color:#d2cd86; '>)</span><span
+                style='color:#b060b0; '>;</span>
+  function transfer<span style='color:#d2cd86; '>(</span>address to<span
+                style='color:#d2cd86; '>,</span> uint256 value<span style='color:#d2cd86; '>)</span> <span
+                style='color:#e66170; font-weight:bold; '>public</span> returns <span style='color:#d2cd86; '>(</span>bool<span
+                style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+  event Transfer<span style='color:#d2cd86; '>(</span>address indexed from<span style='color:#d2cd86; '>,</span> address indexed to<span
+                style='color:#d2cd86; '>,</span> uint256 value<span style='color:#d2cd86; '>)</span><span
+                style='color:#b060b0; '>;</span>
+<span style='color:#b060b0; '>}</span>
+
+contract BasicToken is ERC20Basic <span style='color:#b060b0; '>{</span>
+  using SafeMath <span style='color:#e66170; font-weight:bold; '>for</span> uint256<span
+                style='color:#b060b0; '>;</span>
+
+  mapping<span style='color:#d2cd86; '>(</span>address <span style='color:#d2cd86; '>=</span><span
+                style='color:#d2cd86; '>></span> uint256<span style='color:#d2cd86; '>)</span> balances<span
+                style='color:#b060b0; '>;</span>
+
+  uint256 totalSupply_<span style='color:#b060b0; '>;</span>
+
+  <span style='color:#90b0e0; '>/**</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@</span><span
+                style='color:#90b0e0; '>dev total number of tokens in existence</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;*/</span>
+  function totalSupply<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span
+                style='color:#e66170; font-weight:bold; '>public</span> view returns <span
+                style='color:#d2cd86; '>(</span>uint256<span style='color:#d2cd86; '>)</span> <span
+                style='color:#b060b0; '>{</span>
+    <span style='color:#e66170; font-weight:bold; '>return</span> totalSupply_<span style='color:#b060b0; '>;</span>
+  <span style='color:#b060b0; '>}</span>
+
+  <span style='color:#90b0e0; '>/**</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@</span><span
+                style='color:#90b0e0; '>dev transfer token for a specified address</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@param</span><span
+                style='color:#90b0e0; '> _to The address to transfer to.</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@param</span><span
+                style='color:#90b0e0; '> _value The amount to be transferred.</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;*/</span>
+  function transfer<span style='color:#d2cd86; '>(</span>address _to<span style='color:#d2cd86; '>,</span> uint256 _value<span
+                style='color:#d2cd86; '>)</span> <span
+                style='color:#e66170; font-weight:bold; '>public</span> returns <span style='color:#d2cd86; '>(</span>bool<span
+                style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+    require<span style='color:#d2cd86; '>(</span>_to <span style='color:#d2cd86; '>!</span><span
+                style='color:#d2cd86; '>=</span> address<span style='color:#d2cd86; '>(</span><span
+                style='color:#008c00; '>0</span><span style='color:#d2cd86; '>)</span><span
+                style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+    require<span style='color:#d2cd86; '>(</span>_value <span style='color:#d2cd86; '>&lt;</span><span
+                style='color:#d2cd86; '>=</span> balances<span style='color:#d2cd86; '>[</span>msg<span
+                style='color:#d2cd86; '>.</span>sender<span style='color:#d2cd86; '>]</span><span
+                style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+
+    <span style='color:#9999a9; '>// SafeMath.sub will throw if there is not enough balance.</span>
+    balances<span style='color:#d2cd86; '>[</span>msg<span style='color:#d2cd86; '>.</span>sender<span
+                style='color:#d2cd86; '>]</span> <span style='color:#d2cd86; '>=</span> balances<span
+                style='color:#d2cd86; '>[</span>msg<span style='color:#d2cd86; '>.</span>sender<span
+                style='color:#d2cd86; '>]</span><span style='color:#d2cd86; '>.</span>sub<span
+                style='color:#d2cd86; '>(</span>_value<span style='color:#d2cd86; '>)</span><span
+                style='color:#b060b0; '>;</span>
+    balances<span style='color:#d2cd86; '>[</span>_to<span style='color:#d2cd86; '>]</span> <span
+                style='color:#d2cd86; '>=</span> balances<span style='color:#d2cd86; '>[</span>_to<span
+                style='color:#d2cd86; '>]</span><span style='color:#d2cd86; '>.</span>add<span
+                style='color:#d2cd86; '>(</span>_value<span style='color:#d2cd86; '>)</span><span
+                style='color:#b060b0; '>;</span>
+    Transfer<span style='color:#d2cd86; '>(</span>msg<span style='color:#d2cd86; '>.</span>sender<span
+                style='color:#d2cd86; '>,</span> _to<span style='color:#d2cd86; '>,</span> _value<span
+                style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>return</span> <span
+                style='color:#e66170; font-weight:bold; '>true</span><span style='color:#b060b0; '>;</span>
+  <span style='color:#b060b0; '>}</span>
+
+  <span style='color:#90b0e0; '>/**</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@</span><span
+                style='color:#90b0e0; '>dev Gets the balance of the specified address.</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@param</span><span
+                style='color:#90b0e0; '> _owner The address to query the the balance of.</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@return</span><span
+                style='color:#90b0e0; '> An uint256 representing the amount owned by the passed address.</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;*/</span>
+  function balanceOf<span style='color:#d2cd86; '>(</span>address _owner<span style='color:#d2cd86; '>)</span> <span
+                style='color:#e66170; font-weight:bold; '>public</span> view returns <span
+                style='color:#d2cd86; '>(</span>uint256 balance<span style='color:#d2cd86; '>)</span> <span
+                style='color:#b060b0; '>{</span>
+    <span style='color:#e66170; font-weight:bold; '>return</span> balances<span
+                style='color:#d2cd86; '>[</span>_owner<span style='color:#d2cd86; '>]</span><span
+                style='color:#b060b0; '>;</span>
+  <span style='color:#b060b0; '>}</span>
+
+<span style='color:#b060b0; '>}</span>
+
+contract BurnableToken is BasicToken <span style='color:#b060b0; '>{</span>
+
+  event Burn<span style='color:#d2cd86; '>(</span>address indexed burner<span style='color:#d2cd86; '>,</span> uint256 value<span
+                style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+
+  <span style='color:#90b0e0; '>/**</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@</span><span
+                style='color:#90b0e0; '>dev Burns a specific amount of tokens.</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@param</span><span
+                style='color:#90b0e0; '> _value The amount of token to be burned.</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;*/</span>
+  function burn<span style='color:#d2cd86; '>(</span>uint256 _value<span style='color:#d2cd86; '>)</span> <span
+                style='color:#e66170; font-weight:bold; '>public</span> <span style='color:#b060b0; '>{</span>
+    require<span style='color:#d2cd86; '>(</span>_value <span style='color:#d2cd86; '>&lt;</span><span
+                style='color:#d2cd86; '>=</span> balances<span style='color:#d2cd86; '>[</span>msg<span
+                style='color:#d2cd86; '>.</span>sender<span style='color:#d2cd86; '>]</span><span
+                style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#9999a9; '>// no need to require value &lt;= totalSupply, since that would imply the</span>
+    <span style='color:#9999a9; '>// sender's balance is greater than the totalSupply, which *should* be an assertion failure</span>
+
+    address burner <span style='color:#d2cd86; '>=</span> msg<span style='color:#d2cd86; '>.</span>sender<span
+                style='color:#b060b0; '>;</span>
+    balances<span style='color:#d2cd86; '>[</span>burner<span style='color:#d2cd86; '>]</span> <span
+                style='color:#d2cd86; '>=</span> balances<span style='color:#d2cd86; '>[</span>burner<span
+                style='color:#d2cd86; '>]</span><span style='color:#d2cd86; '>.</span>sub<span
+                style='color:#d2cd86; '>(</span>_value<span style='color:#d2cd86; '>)</span><span
+                style='color:#b060b0; '>;</span>
+    totalSupply_ <span style='color:#d2cd86; '>=</span> totalSupply_<span style='color:#d2cd86; '>.</span>sub<span
+                style='color:#d2cd86; '>(</span>_value<span style='color:#d2cd86; '>)</span><span
+                style='color:#b060b0; '>;</span>
+    Burn<span style='color:#d2cd86; '>(</span>burner<span style='color:#d2cd86; '>,</span> _value<span
+                style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+  <span style='color:#b060b0; '>}</span>
+<span style='color:#b060b0; '>}</span>
+
+contract ERC20 is ERC20Basic <span style='color:#b060b0; '>{</span>
+  function allowance<span style='color:#d2cd86; '>(</span>address owner<span style='color:#d2cd86; '>,</span> address spender<span
+                style='color:#d2cd86; '>)</span> <span style='color:#e66170; font-weight:bold; '>public</span> view returns <span
+                style='color:#d2cd86; '>(</span>uint256<span style='color:#d2cd86; '>)</span><span
+                style='color:#b060b0; '>;</span>
+  function transferFrom<span style='color:#d2cd86; '>(</span>address from<span style='color:#d2cd86; '>,</span> address to<span
+                style='color:#d2cd86; '>,</span> uint256 value<span style='color:#d2cd86; '>)</span> <span
+                style='color:#e66170; font-weight:bold; '>public</span> returns <span style='color:#d2cd86; '>(</span>bool<span
+                style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+  function approve<span style='color:#d2cd86; '>(</span>address spender<span style='color:#d2cd86; '>,</span> uint256 value<span
+                style='color:#d2cd86; '>)</span> <span
+                style='color:#e66170; font-weight:bold; '>public</span> returns <span style='color:#d2cd86; '>(</span>bool<span
+                style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+  event Approval<span style='color:#d2cd86; '>(</span>address indexed owner<span style='color:#d2cd86; '>,</span> address indexed spender<span
+                style='color:#d2cd86; '>,</span> uint256 value<span style='color:#d2cd86; '>)</span><span
+                style='color:#b060b0; '>;</span>
+<span style='color:#b060b0; '>}</span>
+
+library SafeERC20 <span style='color:#b060b0; '>{</span>
+  function safeTransfer<span style='color:#d2cd86; '>(</span>ERC20Basic token<span style='color:#d2cd86; '>,</span> address to<span
+                style='color:#d2cd86; '>,</span> uint256 value<span style='color:#d2cd86; '>)</span> internal <span
+                style='color:#b060b0; '>{</span>
+    assert<span style='color:#d2cd86; '>(</span>token<span style='color:#d2cd86; '>.</span>transfer<span
+                style='color:#d2cd86; '>(</span>to<span style='color:#d2cd86; '>,</span> value<span
+                style='color:#d2cd86; '>)</span><span style='color:#d2cd86; '>)</span><span
+                style='color:#b060b0; '>;</span>
+  <span style='color:#b060b0; '>}</span>
+
+  function safeTransferFrom<span style='color:#d2cd86; '>(</span>ERC20 token<span style='color:#d2cd86; '>,</span> address from<span
+                style='color:#d2cd86; '>,</span> address to<span style='color:#d2cd86; '>,</span> uint256 value<span
+                style='color:#d2cd86; '>)</span> internal <span style='color:#b060b0; '>{</span>
+    assert<span style='color:#d2cd86; '>(</span>token<span style='color:#d2cd86; '>.</span>transferFrom<span
+                style='color:#d2cd86; '>(</span>from<span style='color:#d2cd86; '>,</span> to<span
+                style='color:#d2cd86; '>,</span> value<span style='color:#d2cd86; '>)</span><span
+                style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+  <span style='color:#b060b0; '>}</span>
+
+  function safeApprove<span style='color:#d2cd86; '>(</span>ERC20 token<span style='color:#d2cd86; '>,</span> address spender<span
+                style='color:#d2cd86; '>,</span> uint256 value<span style='color:#d2cd86; '>)</span> internal <span
+                style='color:#b060b0; '>{</span>
+    assert<span style='color:#d2cd86; '>(</span>token<span style='color:#d2cd86; '>.</span>approve<span
+                style='color:#d2cd86; '>(</span>spender<span style='color:#d2cd86; '>,</span> value<span
+                style='color:#d2cd86; '>)</span><span style='color:#d2cd86; '>)</span><span
+                style='color:#b060b0; '>;</span>
+  <span style='color:#b060b0; '>}</span>
+<span style='color:#b060b0; '>}</span>
+
+contract StandardToken is ERC20, BasicToken <span style='color:#b060b0; '>{</span>
+
+  mapping <span style='color:#d2cd86; '>(</span>address <span style='color:#d2cd86; '>=</span><span
+                style='color:#d2cd86; '>></span> mapping <span style='color:#d2cd86; '>(</span>address <span
+                style='color:#d2cd86; '>=</span><span style='color:#d2cd86; '>></span> uint256<span
+                style='color:#d2cd86; '>)</span><span style='color:#d2cd86; '>)</span> internal allowed<span
+                style='color:#b060b0; '>;</span>
+
+
+  <span style='color:#90b0e0; '>/**</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@</span><span
+                style='color:#90b0e0; '>dev Transfer tokens from one address to another</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@param</span><span
+                style='color:#90b0e0; '> _from address The address which you want to send tokens from</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@param</span><span
+                style='color:#90b0e0; '> _to address The address which you want to transfer to</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@param</span><span
+                style='color:#90b0e0; '> _value uint256 the amount of tokens to be transferred</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;*/</span>
+  function transferFrom<span style='color:#d2cd86; '>(</span>address _from<span style='color:#d2cd86; '>,</span> address _to<span
+                style='color:#d2cd86; '>,</span> uint256 _value<span style='color:#d2cd86; '>)</span> <span
+                style='color:#e66170; font-weight:bold; '>public</span> returns <span style='color:#d2cd86; '>(</span>bool<span
+                style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+    require<span style='color:#d2cd86; '>(</span>_to <span style='color:#d2cd86; '>!</span><span
+                style='color:#d2cd86; '>=</span> address<span style='color:#d2cd86; '>(</span><span
+                style='color:#008c00; '>0</span><span style='color:#d2cd86; '>)</span><span
+                style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+    require<span style='color:#d2cd86; '>(</span>_value <span style='color:#d2cd86; '>&lt;</span><span
+                style='color:#d2cd86; '>=</span> balances<span style='color:#d2cd86; '>[</span>_from<span
+                style='color:#d2cd86; '>]</span><span style='color:#d2cd86; '>)</span><span
+                style='color:#b060b0; '>;</span>
+    require<span style='color:#d2cd86; '>(</span>_value <span style='color:#d2cd86; '>&lt;</span><span
+                style='color:#d2cd86; '>=</span> allowed<span style='color:#d2cd86; '>[</span>_from<span
+                style='color:#d2cd86; '>]</span><span style='color:#d2cd86; '>[</span>msg<span
+                style='color:#d2cd86; '>.</span>sender<span style='color:#d2cd86; '>]</span><span
+                style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+
+    balances<span style='color:#d2cd86; '>[</span>_from<span style='color:#d2cd86; '>]</span> <span
+                style='color:#d2cd86; '>=</span> balances<span style='color:#d2cd86; '>[</span>_from<span
+                style='color:#d2cd86; '>]</span><span style='color:#d2cd86; '>.</span>sub<span
+                style='color:#d2cd86; '>(</span>_value<span style='color:#d2cd86; '>)</span><span
+                style='color:#b060b0; '>;</span>
+    balances<span style='color:#d2cd86; '>[</span>_to<span style='color:#d2cd86; '>]</span> <span
+                style='color:#d2cd86; '>=</span> balances<span style='color:#d2cd86; '>[</span>_to<span
+                style='color:#d2cd86; '>]</span><span style='color:#d2cd86; '>.</span>add<span
+                style='color:#d2cd86; '>(</span>_value<span style='color:#d2cd86; '>)</span><span
+                style='color:#b060b0; '>;</span>
+    allowed<span style='color:#d2cd86; '>[</span>_from<span style='color:#d2cd86; '>]</span><span
+                style='color:#d2cd86; '>[</span>msg<span style='color:#d2cd86; '>.</span>sender<span
+                style='color:#d2cd86; '>]</span> <span style='color:#d2cd86; '>=</span> allowed<span
+                style='color:#d2cd86; '>[</span>_from<span style='color:#d2cd86; '>]</span><span
+                style='color:#d2cd86; '>[</span>msg<span style='color:#d2cd86; '>.</span>sender<span
+                style='color:#d2cd86; '>]</span><span style='color:#d2cd86; '>.</span>sub<span
+                style='color:#d2cd86; '>(</span>_value<span style='color:#d2cd86; '>)</span><span
+                style='color:#b060b0; '>;</span>
+    Transfer<span style='color:#d2cd86; '>(</span>_from<span style='color:#d2cd86; '>,</span> _to<span
+                style='color:#d2cd86; '>,</span> _value<span style='color:#d2cd86; '>)</span><span
+                style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>return</span> <span
+                style='color:#e66170; font-weight:bold; '>true</span><span style='color:#b060b0; '>;</span>
+  <span style='color:#b060b0; '>}</span>
+
+  <span style='color:#90b0e0; '>/**</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@</span><span
+                style='color:#90b0e0; '>dev Approve the passed address to spend the specified amount of tokens on behalf of msg</span><span
+                style='color:#00a800; '>.</span><span style='color:#90b0e0; '>sender.</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '></span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> Beware that changing an allowance with this method brings the risk that someone may use both the old</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> and the new allowance by unfortunate transaction ordering. One possible solution to mitigate this</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> race condition is to first reduce the spender's allowance to </span><span
+                style='color:#00a800; '>0</span><span
+                style='color:#90b0e0; '> and set the desired value afterwards</span><span
+                style='color:#8695b8; font-weight:bold; '>:</span><span style='color:#90b0e0; '></span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#6070ec; '>https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729</span><span
+                style='color:#90b0e0; '></span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@param</span><span
+                style='color:#90b0e0; '> _spender The address which will spend the funds.</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@param</span><span
+                style='color:#90b0e0; '> _value The amount of tokens to be spent.</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;*/</span>
+  function approve<span style='color:#d2cd86; '>(</span>address _spender<span style='color:#d2cd86; '>,</span> uint256 _value<span
+                style='color:#d2cd86; '>)</span> <span
+                style='color:#e66170; font-weight:bold; '>public</span> returns <span style='color:#d2cd86; '>(</span>bool<span
+                style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+    allowed<span style='color:#d2cd86; '>[</span>msg<span style='color:#d2cd86; '>.</span>sender<span
+                style='color:#d2cd86; '>]</span><span style='color:#d2cd86; '>[</span>_spender<span
+                style='color:#d2cd86; '>]</span> <span style='color:#d2cd86; '>=</span> _value<span
+                style='color:#b060b0; '>;</span>
+    Approval<span style='color:#d2cd86; '>(</span>msg<span style='color:#d2cd86; '>.</span>sender<span
+                style='color:#d2cd86; '>,</span> _spender<span style='color:#d2cd86; '>,</span> _value<span
+                style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>return</span> <span
+                style='color:#e66170; font-weight:bold; '>true</span><span style='color:#b060b0; '>;</span>
+  <span style='color:#b060b0; '>}</span>
+
+  <span style='color:#90b0e0; '>/**</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@</span><span
+                style='color:#90b0e0; '>dev Function to check the amount of tokens that an owner allowed to a spender.</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@param</span><span
+                style='color:#90b0e0; '> _owner address The address which owns the funds.</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@param</span><span
+                style='color:#90b0e0; '> _spender address The address which will spend the funds.</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@return</span><span
+                style='color:#90b0e0; '> A uint256 specifying the amount of tokens still available for the spender.</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;*/</span>
+  function allowance<span style='color:#d2cd86; '>(</span>address _owner<span style='color:#d2cd86; '>,</span> address _spender<span
+                style='color:#d2cd86; '>)</span> <span style='color:#e66170; font-weight:bold; '>public</span> view returns <span
+                style='color:#d2cd86; '>(</span>uint256<span style='color:#d2cd86; '>)</span> <span
+                style='color:#b060b0; '>{</span>
+    <span style='color:#e66170; font-weight:bold; '>return</span> allowed<span
+                style='color:#d2cd86; '>[</span>_owner<span style='color:#d2cd86; '>]</span><span
+                style='color:#d2cd86; '>[</span>_spender<span style='color:#d2cd86; '>]</span><span
+                style='color:#b060b0; '>;</span>
+  <span style='color:#b060b0; '>}</span>
+
+  <span style='color:#90b0e0; '>/**</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@</span><span
+                style='color:#90b0e0; '>dev Increase the amount of tokens that an owner allowed to a spender.</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '></span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> approve should be called when allowed[_spender] == </span><span
+                style='color:#00a800; '>0</span><span style='color:#90b0e0; '>. To increment</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> allowed value is better to use this function to avoid </span><span
+                style='color:#00a800; '>2</span><span style='color:#90b0e0; '> calls (and wait until</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> the first transaction is mined)</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> From MonolithDAO Token</span><span style='color:#00a800; '>.</span><span
+                style='color:#90b0e0; '>sol</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@param</span><span
+                style='color:#90b0e0; '> _spender The address which will spend the funds.</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@param</span><span
+                style='color:#90b0e0; '> _addedValue The amount of tokens to increase the allowance by.</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;*/</span>
+  function increaseApproval<span style='color:#d2cd86; '>(</span>address _spender<span style='color:#d2cd86; '>,</span> uint _addedValue<span
+                style='color:#d2cd86; '>)</span> <span
+                style='color:#e66170; font-weight:bold; '>public</span> returns <span style='color:#d2cd86; '>(</span>bool<span
+                style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+    allowed<span style='color:#d2cd86; '>[</span>msg<span style='color:#d2cd86; '>.</span>sender<span
+                style='color:#d2cd86; '>]</span><span style='color:#d2cd86; '>[</span>_spender<span
+                style='color:#d2cd86; '>]</span> <span style='color:#d2cd86; '>=</span> allowed<span
+                style='color:#d2cd86; '>[</span>msg<span style='color:#d2cd86; '>.</span>sender<span
+                style='color:#d2cd86; '>]</span><span style='color:#d2cd86; '>[</span>_spender<span
+                style='color:#d2cd86; '>]</span><span style='color:#d2cd86; '>.</span>add<span
+                style='color:#d2cd86; '>(</span>_addedValue<span style='color:#d2cd86; '>)</span><span
+                style='color:#b060b0; '>;</span>
+    Approval<span style='color:#d2cd86; '>(</span>msg<span style='color:#d2cd86; '>.</span>sender<span
+                style='color:#d2cd86; '>,</span> _spender<span style='color:#d2cd86; '>,</span> allowed<span
+                style='color:#d2cd86; '>[</span>msg<span style='color:#d2cd86; '>.</span>sender<span
+                style='color:#d2cd86; '>]</span><span style='color:#d2cd86; '>[</span>_spender<span
+                style='color:#d2cd86; '>]</span><span style='color:#d2cd86; '>)</span><span
+                style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>return</span> <span
+                style='color:#e66170; font-weight:bold; '>true</span><span style='color:#b060b0; '>;</span>
+  <span style='color:#b060b0; '>}</span>
+
+  <span style='color:#90b0e0; '>/**</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@</span><span
+                style='color:#90b0e0; '>dev Decrease the amount of tokens that an owner allowed to a spender.</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '></span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> approve should be called when allowed[_spender] == </span><span
+                style='color:#00a800; '>0</span><span style='color:#90b0e0; '>. To decrement</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> allowed value is better to use this function to avoid </span><span
+                style='color:#00a800; '>2</span><span style='color:#90b0e0; '> calls (and wait until</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> the first transaction is mined)</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> From MonolithDAO Token</span><span style='color:#00a800; '>.</span><span
+                style='color:#90b0e0; '>sol</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@param</span><span
+                style='color:#90b0e0; '> _spender The address which will spend the funds.</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;</span><span style='color:#8695b8; font-weight:bold; '>*</span><span
+                style='color:#90b0e0; '> </span><span style='color:#8695b8; font-weight:bold; '>@param</span><span
+                style='color:#90b0e0; '> _subtractedValue The amount of tokens to decrease the allowance by.</span>
+<span style='color:#90b0e0; '>&#xa0;&#xa0;&#xa0;*/</span>
+  function decreaseApproval<span style='color:#d2cd86; '>(</span>address _spender<span style='color:#d2cd86; '>,</span> uint _subtractedValue<span
+                style='color:#d2cd86; '>)</span> <span
+                style='color:#e66170; font-weight:bold; '>public</span> returns <span style='color:#d2cd86; '>(</span>bool<span
+                style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+    uint oldValue <span style='color:#d2cd86; '>=</span> allowed<span style='color:#d2cd86; '>[</span>msg<span
+                style='color:#d2cd86; '>.</span>sender<span style='color:#d2cd86; '>]</span><span
+                style='color:#d2cd86; '>[</span>_spender<span style='color:#d2cd86; '>]</span><span
+                style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>if</span> <span
+                style='color:#d2cd86; '>(</span>_subtractedValue <span style='color:#d2cd86; '>></span> oldValue<span
+                style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+      allowed<span style='color:#d2cd86; '>[</span>msg<span style='color:#d2cd86; '>.</span>sender<span
+                style='color:#d2cd86; '>]</span><span style='color:#d2cd86; '>[</span>_spender<span
+                style='color:#d2cd86; '>]</span> <span style='color:#d2cd86; '>=</span> <span
+                style='color:#008c00; '>0</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#b060b0; '>}</span> <span style='color:#e66170; font-weight:bold; '>else</span> <span
+                style='color:#b060b0; '>{</span>
+      allowed<span style='color:#d2cd86; '>[</span>msg<span style='color:#d2cd86; '>.</span>sender<span
+                style='color:#d2cd86; '>]</span><span style='color:#d2cd86; '>[</span>_spender<span
+                style='color:#d2cd86; '>]</span> <span style='color:#d2cd86; '>=</span> oldValue<span
+                style='color:#d2cd86; '>.</span>sub<span style='color:#d2cd86; '>(</span>_subtractedValue<span
+                style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#b060b0; '>}</span>
+    Approval<span style='color:#d2cd86; '>(</span>msg<span style='color:#d2cd86; '>.</span>sender<span
+                style='color:#d2cd86; '>,</span> _spender<span style='color:#d2cd86; '>,</span> allowed<span
+                style='color:#d2cd86; '>[</span>msg<span style='color:#d2cd86; '>.</span>sender<span
+                style='color:#d2cd86; '>]</span><span style='color:#d2cd86; '>[</span>_spender<span
+                style='color:#d2cd86; '>]</span><span style='color:#d2cd86; '>)</span><span
+                style='color:#b060b0; '>;</span>
+    <span style='color:#e66170; font-weight:bold; '>return</span> <span
+                style='color:#e66170; font-weight:bold; '>true</span><span style='color:#b060b0; '>;</span>
+  <span style='color:#b060b0; '>}</span>
+
+<span style='color:#b060b0; '>}</span>
+
+contract EOToken is StandardToken, BurnableToken, Ownable <span style='color:#b060b0; '>{</span>
+    using SafeMath <span style='color:#e66170; font-weight:bold; '>for</span> uint<span style='color:#b060b0; '>;</span>
+
+    string constant <span style='color:#e66170; font-weight:bold; '>public</span> symbol <span
+                style='color:#d2cd86; '>=</span> <span style='color:#00c4c4; '>"EO"</span><span style='color:#b060b0; '>;</span>
+    string constant <span style='color:#e66170; font-weight:bold; '>public</span> name <span
+                style='color:#d2cd86; '>=</span> <span style='color:#00c4c4; '>"EO Coin"</span><span
+                style='color:#b060b0; '>;</span>
+
+    uint8 constant <span style='color:#e66170; font-weight:bold; '>public</span> decimals <span style='color:#d2cd86; '>=</span> <span
+                style='color:#008c00; '>18</span><span style='color:#b060b0; '>;</span>
+    uint256 INITIAL_SUPPLY <span style='color:#d2cd86; '>=</span> <span
+                style='color:#009f00; '>1000000000e18</span><span style='color:#b060b0; '>;</span>
+
+    uint constant ITSEndTime <span style='color:#d2cd86; '>=</span> <span style='color:#008c00; '>1535760000</span><span
+                style='color:#b060b0; '>;</span> <span style='color:#9999a9; '>// Saturday, September 1, 2018 12:00:00 AM</span>
+    uint constant unlockTime <span style='color:#d2cd86; '>=</span> <span style='color:#008c00; '>1546300800</span><span
+                style='color:#b060b0; '>;</span> <span
+                style='color:#9999a9; '>//  Tuesday, January 1, 2019 12:00:00 AM</span>
+
+    address company <span style='color:#d2cd86; '>=</span> <span style='color:#00a800; '>0x9ef7637e9b07508f8a88ded6395d918a83cb5cfe</span><span
+                style='color:#b060b0; '>;</span>
+    address team <span style='color:#d2cd86; '>=</span> <span style='color:#00a800; '>0x2ec27439991f98c57ee71706632081af0069f888</span><span
+                style='color:#b060b0; '>;</span>
+
+    address crowdsale <span style='color:#d2cd86; '>=</span> <span style='color:#00a800; '>0xf3edbb0c10fca17bb15f3f0b72784477954eff4c</span><span
+                style='color:#b060b0; '>;</span>
+    address bounty <span style='color:#d2cd86; '>=</span> <span style='color:#00a800; '>0x63b2d1244c6232eb3ce82cb21aa6fad9c42d158e</span><span
+                style='color:#b060b0; '>;</span>
+
+    address beneficiary <span style='color:#d2cd86; '>=</span> <span style='color:#00a800; '>0x342d23ce3a15f67467b4b6b88a91847270fd8e53</span><span
+                style='color:#b060b0; '>;</span>
+
+    uint constant companyTokens <span style='color:#d2cd86; '>=</span> <span style='color:#009f00; '>200000000e18</span><span
+                style='color:#b060b0; '>;</span>
+    uint constant teamTokens <span style='color:#d2cd86; '>=</span> <span
+                style='color:#009f00; '>50000000e18</span><span style='color:#b060b0; '>;</span>
+    uint constant crowdsaleTokens <span style='color:#d2cd86; '>=</span> <span
+                style='color:#009f00; '>700000000e18</span><span style='color:#b060b0; '>;</span>
+    uint constant bountyTokens <span style='color:#d2cd86; '>=</span> <span
+                style='color:#009f00; '>50000000e18</span><span style='color:#b060b0; '>;</span>
+
+
+    function EOToken<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span
+                style='color:#e66170; font-weight:bold; '>public</span> <span style='color:#b060b0; '>{</span>
+
+        totalSupply_ <span style='color:#d2cd86; '>=</span> INITIAL_SUPPLY<span style='color:#b060b0; '>;</span>
+
+        <span style='color:#9999a9; '>// InitialDistribution</span>
+        preSale<span style='color:#d2cd86; '>(</span>company<span style='color:#d2cd86; '>,</span> companyTokens<span
+                style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+        preSale<span style='color:#d2cd86; '>(</span>team<span style='color:#d2cd86; '>,</span> teamTokens<span
+                style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+        preSale<span style='color:#d2cd86; '>(</span>crowdsale<span
+                style='color:#d2cd86; '>,</span> crowdsaleTokens<span style='color:#d2cd86; '>)</span><span
+                style='color:#b060b0; '>;</span>
+        preSale<span style='color:#d2cd86; '>(</span>bounty<span style='color:#d2cd86; '>,</span> bountyTokens<span
+                style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+
+    <span style='color:#b060b0; '>}</span>
+
+    function preSale<span style='color:#d2cd86; '>(</span>address _address<span style='color:#d2cd86; '>,</span> uint _amount<span
+                style='color:#d2cd86; '>)</span> internal returns <span style='color:#d2cd86; '>(</span>bool<span
+                style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+        balances<span style='color:#d2cd86; '>[</span>_address<span style='color:#d2cd86; '>]</span> <span
+                style='color:#d2cd86; '>=</span> _amount<span style='color:#b060b0; '>;</span>
+        Transfer<span style='color:#d2cd86; '>(</span>address<span style='color:#d2cd86; '>(</span><span
+                style='color:#00a800; '>0x0</span><span style='color:#d2cd86; '>)</span><span
+                style='color:#d2cd86; '>,</span> _address<span style='color:#d2cd86; '>,</span> _amount<span
+                style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#b060b0; '>}</span>
+
+    function checkPermissions<span style='color:#d2cd86; '>(</span>address _from<span style='color:#d2cd86; '>)</span> internal constant returns <span
+                style='color:#d2cd86; '>(</span>bool<span style='color:#d2cd86; '>)</span> <span
+                style='color:#b060b0; '>{</span>
+
+        <span style='color:#e66170; font-weight:bold; '>if</span> <span style='color:#d2cd86; '>(</span>_from <span
+                style='color:#d2cd86; '>=</span><span style='color:#d2cd86; '>=</span> team <span
+                style='color:#d2cd86; '>&amp;</span><span style='color:#d2cd86; '>&amp;</span> now <span
+                style='color:#d2cd86; '>&lt;</span> unlockTime<span style='color:#d2cd86; '>)</span> <span
+                style='color:#b060b0; '>{</span>
+            <span style='color:#e66170; font-weight:bold; '>return</span> <span
+                style='color:#e66170; font-weight:bold; '>false</span><span style='color:#b060b0; '>;</span>
+        <span style='color:#b060b0; '>}</span>
+
+        <span style='color:#e66170; font-weight:bold; '>if</span> <span style='color:#d2cd86; '>(</span>_from <span
+                style='color:#d2cd86; '>=</span><span style='color:#d2cd86; '>=</span> bounty <span
+                style='color:#d2cd86; '>|</span><span style='color:#d2cd86; '>|</span> _from <span
+                style='color:#d2cd86; '>=</span><span style='color:#d2cd86; '>=</span> crowdsale <span
+                style='color:#d2cd86; '>|</span><span style='color:#d2cd86; '>|</span> _from <span
+                style='color:#d2cd86; '>=</span><span style='color:#d2cd86; '>=</span> company<span
+                style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+            <span style='color:#e66170; font-weight:bold; '>return</span> <span
+                style='color:#e66170; font-weight:bold; '>true</span><span style='color:#b060b0; '>;</span>
+        <span style='color:#b060b0; '>}</span>
+
+        <span style='color:#e66170; font-weight:bold; '>if</span> <span style='color:#d2cd86; '>(</span>now <span
+                style='color:#d2cd86; '>&lt;</span> ITSEndTime<span style='color:#d2cd86; '>)</span> <span
+                style='color:#b060b0; '>{</span>
+            <span style='color:#e66170; font-weight:bold; '>return</span> <span
+                style='color:#e66170; font-weight:bold; '>false</span><span style='color:#b060b0; '>;</span>
+        <span style='color:#b060b0; '>}</span> <span style='color:#e66170; font-weight:bold; '>else</span> <span
+                style='color:#b060b0; '>{</span>
+            <span style='color:#e66170; font-weight:bold; '>return</span> <span
+                style='color:#e66170; font-weight:bold; '>true</span><span style='color:#b060b0; '>;</span>
+        <span style='color:#b060b0; '>}</span>
+
+    <span style='color:#b060b0; '>}</span>
+
+    function transfer<span style='color:#d2cd86; '>(</span>address _to<span style='color:#d2cd86; '>,</span> uint256 _value<span
+                style='color:#d2cd86; '>)</span> <span
+                style='color:#e66170; font-weight:bold; '>public</span> returns <span style='color:#d2cd86; '>(</span>bool<span
+                style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+
+        require<span style='color:#d2cd86; '>(</span>checkPermissions<span style='color:#d2cd86; '>(</span>msg<span
+                style='color:#d2cd86; '>.</span>sender<span style='color:#d2cd86; '>)</span><span
+                style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+        <span style='color:#e66170; font-weight:bold; '>super</span><span style='color:#d2cd86; '>.</span>transfer<span
+                style='color:#d2cd86; '>(</span>_to<span style='color:#d2cd86; '>,</span> _value<span
+                style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#b060b0; '>}</span>
+
+    function transferFrom<span style='color:#d2cd86; '>(</span>address _from<span style='color:#d2cd86; '>,</span> address _to<span
+                style='color:#d2cd86; '>,</span> uint256 _value<span style='color:#d2cd86; '>)</span> <span
+                style='color:#e66170; font-weight:bold; '>public</span> returns <span style='color:#d2cd86; '>(</span>bool<span
+                style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+
+        require<span style='color:#d2cd86; '>(</span>checkPermissions<span style='color:#d2cd86; '>(</span>_from<span
+                style='color:#d2cd86; '>)</span><span style='color:#d2cd86; '>)</span><span
+                style='color:#b060b0; '>;</span>
+        <span style='color:#e66170; font-weight:bold; '>super</span><span
+                style='color:#d2cd86; '>.</span>transferFrom<span style='color:#d2cd86; '>(</span>_from<span
+                style='color:#d2cd86; '>,</span> _to<span style='color:#d2cd86; '>,</span> _value<span
+                style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#b060b0; '>}</span>
+
+    function <span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span
+                style='color:#e66170; font-weight:bold; '>public</span> payable <span style='color:#b060b0; '>{</span>
+        require<span style='color:#d2cd86; '>(</span>msg<span style='color:#d2cd86; '>.</span>value <span
+                style='color:#d2cd86; '>></span><span style='color:#d2cd86; '>=</span> <span style='color:#009f00; '>1e16</span><span
+                style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+        beneficiary<span style='color:#d2cd86; '>.</span>transfer<span style='color:#d2cd86; '>(</span>msg<span
+                style='color:#d2cd86; '>.</span>value<span style='color:#d2cd86; '>)</span><span
+                style='color:#b060b0; '>;</span>
+    <span style='color:#b060b0; '>}</span>
+<span style='color:#b060b0; '>}</span>
+</pre>
+    </div>
+</div>
+</body>
+</html>

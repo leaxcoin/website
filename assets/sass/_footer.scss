@@ -1,0 +1,48 @@
+footer {
+    background-image: url(/img/footer-bg.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    margin-top: 120px !important;
+    margin-bottom: 0 !important;
+    p.content-text {
+        color: $white !important;
+        a{
+            color: $blue;
+        }
+    }
+    .footer-logo{
+        width: 100%;
+        display: table;
+        margin: 50px 0 0 0;
+    }
+    .footer-links {
+        margin: 40px 0 40px 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        a{
+            display: flex;
+            align-self: center;
+            color: $white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 1em;
+            &:hover {
+                color: $blue;
+            }
+        }
+    }
+    .footer-text {
+        color: mix($dark-blue, $white, 50%);
+        font-size: 0.75em;
+        line-height: 200%;
+        a {
+            color: mix($dark-blue, $white, 50%);
+            &:hover {
+                color: $blue;
+            }
+        }
+    }
+}

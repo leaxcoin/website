@@ -1,0 +1,35 @@
+#leaxcoin-wallet {
+    width: 100%;
+    height: auto;
+
+    .content-info-box {
+        margin-top: 60px;
+    }
+
+    .leax-icon-box {
+        justify-content: left;
+        margin-bottom: 20px;
+        .leax-icon {
+            border-color: $white;
+        }
+    }
+
+    .section-img {
+        margin-top: 50px;
+        width: 150% !important;
+        height: auto;
+        margin-left: -50%;
+    }
+
+}
+#leaxcoin-wallet-buttons {
+    margin: 0 0 40px 0;
+}
+
+@include media-breakpoint-down(sm) {
+    #leaxcoin-wallet {
+        .section-img {
+            margin-bottom: 0;
+        }
+    }
+}

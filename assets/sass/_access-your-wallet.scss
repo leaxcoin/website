@@ -1,0 +1,42 @@
+#access-your-wallet {
+
+}
+
+#platform-icons {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    .platform-icon-wrapper {
+        width: 100%;
+        display: inline-table;
+        text-align: center;
+        text-decoration: none;
+    }
+    .platform-icon {
+        width: 150px;
+        height: 150px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $white;
+        border-radius: 25px;
+    }
+    .platform-icon-disabled .platform-icon {
+        opacity: 0.2;
+    }
+    .platform-icon-text {
+        padding: 0;
+        margin: 10px 0 0 0;
+        font-size: 1em;
+        font-weight: 700;
+        line-height: 100%;
+        small {
+            font-size: 0.7em;
+        }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    #platform-icons > div {
+        margin-bottom: 20px;
+    }
+}

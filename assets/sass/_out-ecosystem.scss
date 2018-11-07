@@ -1,0 +1,13 @@
+#out-ecosystem {
+    .img-fluid {
+        margin-top: -60px;
+    }
+}
+
+@include media-breakpoint-down(xs) {
+    #out-ecosystem {
+        .img-fluid {
+            margin-top: 0;
+        }
+    }
+}

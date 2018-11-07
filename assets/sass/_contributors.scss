@@ -1,0 +1,84 @@
+#map-wrapper {
+    position: relative;
+    width: 90%;
+    margin: 30px auto;
+    display: table;
+}
+
+#contributor-box {
+    position: absolute;
+    width: 550px;
+    background-color: $white;
+    padding: 20px 20px 15px 20px;
+    border-radius: 15px;
+    top: 50px;
+    right: 0%;
+    img {
+        max-width: 100px;
+    }
+    h5 {
+        color: $dark-blue;
+        text-transform: uppercase;
+        font-size: 0.9em;
+        font-weight: bold;
+        letter-spacing: 0.1em;
+    }
+    p {
+        font-size: 0.75em;
+    }
+    .buttons {
+        .btn {
+            padding: 5px;
+        }
+    }
+
+    .links {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        a, .flag-icon {
+            margin-left: 10px;
+            &.link-telegram {
+                color: $blue;
+            }
+            &.link-twitter {
+                color: $sky-blue;
+            }
+        }
+    }
+}
+
+#map {
+    width: 100%; 
+    .map {
+        fill: #1e223b;
+    }
+    .circle {
+        fill: $sky-blue;
+        cursor: pointer;
+        stroke-width: 0;
+        &.active {
+            fill: $blue;
+            animation: 1s infinite circleWave;
+        }
+    }
+}
+
+@keyframes circleWave {
+    0%{
+        stroke-width: 0;
+        stroke: rgba($blue, 0.1);
+    }
+    30%{
+        stroke-width: 20px;
+        stroke: rgba($blue, 0.3);
+    }
+    75%{
+        stroke-width: 40px;
+        stroke: transparent;
+    }
+
+    100%{
+        stroke: transparent;
+    }
+}

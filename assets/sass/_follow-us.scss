@@ -1,0 +1,52 @@
+#follow-us{
+    position: fixed;
+    top: 200px;
+    left: 10px;
+    width: 67px;
+    height: 400px;
+    span.text {
+        @include rotate(-90deg);
+        color: $white;
+        position: absolute;
+        width: 80px;
+        top: 40px;
+        left: -5px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 0.6em;
+        letter-spacing: 0.2em;
+    }
+    span.line {
+        width: 2px;
+        height: 40px;
+        display: block;
+        background: $blue;
+        position: absolute;
+        top: 110px;
+        left: 32px;
+    }
+    .links {
+        width: 100%;
+        height: auto;
+        display: block;
+        position: absolute;
+        top: 170px;
+        text-align: center;
+        a {
+            display: block;
+            text-align: center;
+            padding: 5px 0;
+            color: $white;
+        }
+    }
+    .telegram {
+        position: absolute;
+        top: 295px;
+        left: 8px;
+        .btn-circle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

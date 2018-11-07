@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+    <title>{{ main.title }}</title>
+</head>
+<body>
+    
+    <div id="preloader-wrapper">
+        <div id="preloader">
+            <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+
+    <header>
+        <nav id="main-nav" class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#">
+                <img src="/img/logo.png" alt="Leaxcoin">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
+                <ul class="navbar-nav mr-auto"></ul>
+
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Leax Foundation <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Wallets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Community</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Platforms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Roadmap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Whitepaper</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact us</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="flag-icon-border">
+                                <span class="flag-icon-background flag-icon-us flag-icon-squared"></span>
+                            </span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/en"><span class="flag-icon flag-icon-us"></span> English</a>
+                            <a class="dropdown-item" href="/pt-br"><span class="flag-icon flag-icon-br"></span> Português</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                </ul>
+
+                <form class="form-inline">
+                    <button class="btn btn-outline-light" type="button">Sign up</button>
+                </form>
+                
+            </div>
+        </nav>
+    </header>
+
+
+    <section id="main-text">
+        <div class="container text-center">
+            <p id="typed-top-text" class="top-text">The Blockchain Evolution</p>
+
+            <h1 id="typed-main-text"></h1>
+
+            <p class="bottom-text">
+                Away with all the real estate transaction problems. <br>
+                A strong cryptocurrency in the market!
+            </p>
+
+            <div class="video-button" data-aos="fade-down" data-aos-delay="800">
+                <button class="btn btn-primary btn-circle" data-toggle="modal" data-target="#videoModal">
+                    <i class="fa fa-lg fa-play"></i>
+                </button>
+                <p class="play-text">Play video</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up">
+                    <img class="img-fluid img-floating" src="/img/what-is-leaxcoin.png" alt="What Is Leaxcoin?">
+                </div>
+                <div class="col-md-8" data-aos="fade-down">
+
+                    <p class="content-subtitle">About The Currency</p>
+                    <h2 class="content-title">What Is <strong>Leaxcoin</strong>?</h2>
+                    <p class="content-text">
+                        Away with all the real estate transaction problems! 
+                        A strong currency in the world! <strong>Leaxcoin</strong> is a decentralized global 
+                        currency that adopts the Ethereum blockchain technology, the leader in the smart contract evolution. 
+                        The <strong>Leaxcoin</strong> platform comes up with the solution to all the problems with real estate 
+                        transactions, either in the purchase, rent, lease and real estate launch or in the property registry.
+                    </p>
+                    <p class="content-text">
+                        The success of the <strong>Leaxcoin</strong> platform will be totally achieved with a global community 
+                        of real estate specialists and experienced developers, who will create the necessary tools to connect 
+                        all the real estate processes and the regulatory agencies of property registration for a blockchain, 
+                        everything in compliance with the countless jurisdictions of every country, state and city.
+                    </p>
+                    <a href="#" class="btn btn-primary btn-lg">
+                        <i class="fa fa-lg fa-book"></i> Read Whitepaper
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-info" id="out-ecosystem">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-down">
+
+                    <p class="content-subtitle">The Platform</p>
+                    <h2 class="content-title">Out Ecosystem A <br><strong>Global Community</strong></h2>
+                    <p class="content-tags">
+                        INVESTORS  •  TRADITIONAL REAL ESTATE NEGOTIATORS <br>
+                        OWNERS  •  BROKERS  •  REAL ESTATE AGENTS  •  ORGANIZATIONS <br>
+                        REGISTRY OFFICES  •  REAL ESTATE  •  AGENCIES <br>
+                        REAL ESTATE SPECIALISTS  •  DEVELOPERS
+                    </p>
+
+                    <p class="content-text">
+                        Everybody together, creating an integrated encompassing ecosystem <br>
+                        to facilitate the real estate process inclusion in the blockchain.
+                    </p>
+                    <p class="content-text">
+                        <i><strong>ONE-STOP THAT HOSTS ALL THE REAL ESTATE PROCESSES</strong></i>
+                    </p>
+                    <p class="content-text">
+                        In this way, the Leaxcoin makes it possible to unify all the traditional and cryptographic investment, ensuring faster speed in the process with less bureaucracy.
+                    </p>
+                    <p class="content-text">
+                        And all this in a totally DECENTRALIZED GLOBAL COMMUNITY format!
+                    </p>
+                </div>
+                <div class="col-md-6" data-aos="fade-up">
+                    <img class="img-fluid img-floating" src="/img/graph.png" alt="Leaxcoin">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="the-following" class="content-info" data-aos="fade-up">
+        <div class="container">
+            <div class="text-center">
+                <p class="content-subtitle">Our Platform</p>
+                <h2 class="content-title">
+                    The following <br>
+                    <strong>Elements As The Main Focus</strong>:
+                </h2>
+            </div>
+            <div id="platform-items" class="row">
+                <div class="col-md-3 text-center">
+                    <div class="platform-item-img">
+                        <img src="/img/property-registry.png" alt="Property Registry" class="img-fluid hidden">
+                    </div>
+                    <h3>Property Registry</h3>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="platform-item-img">
+                        <img src="/img/contracts.png" alt="Contracts, Listing And Real Estate Crowdsale" class="img-fluid">
+                    </div>
+                    <h3>Contracts, Listing & <br> Real Estate Crowdsale</h3>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="platform-item-img">
+                        <img src="/img/leaxcoin-wallet.png" alt="Official Leaxcoin Wallet" class="img-fluid">
+                    </div>
+                    <h3>Official Leaxcoin Wallet</h3>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="platform-item-img">
+                        <img src="/img/community-support.png" alt="Community And Global Support" class="img-fluid">
+                    </div>
+                    <h3>Community & <br> Global Support</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="property-registry" class="content-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-up">
+                    <div class="main-image-wrapper">
+                        <img class="img-fluid img-floating" src="/img/property-registry-platform.png" alt="Leaxcoin">
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-down">
+                    <p class="content-subtitle">Property Registry Platform</p>
+                    <h2 class="content-title">Property <strong>Registry</strong></h2>
+
+                    <p class="content-text">
+                        The entire platform environment is intended for local and global communities, with tools, applications and solutions to a full integration with registry, notary and government institutions, following the local jurisdiction for the transfer of title deeds.                           
+                    </p>
+                    <p class="content-text">
+                        The Leaxcoin platform is protected by blockchain, ensuring an unchangeable database.
+                    </p>
+                    <p class="content-text">
+                        <i>
+                            <strong>As the information and document security is our <br> number 1 priority!</strong>
+                        </i>
+                    </p>
+                </div>
+            </div>
+
+            <div id="property-registry-icons" class="row" data-aos="fade-up">
+                <div class="col-md-4">
+                    <div class="leax-icon-box">
+                        <div class="leax-icon">
+                            <img src="/img/icon-simple-easy.png" class="img-fluid">
+                        </div>
+                        <div class="leax-icon-text">
+                            <h4>SIMPLE, EASY & <br> INTUITIVE SYSTEM</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="leax-icon-box">
+                        <div class="leax-icon">
+                            <img src="/img/icon-real-estate-registry.png" class="img-fluid">
+                        </div>
+                        <div class="leax-icon-text">
+                            <h4>Real Estate REGISTRY <br> INTERACTION & MAINTENANCE</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="leax-icon-box">
+                        <div class="leax-icon">
+                            <img src="/img/icon-large-community.png" class="img-fluid">
+                        </div>
+                        <div class="leax-icon-text">
+                            <h4>LARGE GLOBAL <br> COMMUNITY</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="property-registry-buttons" class="text-center" data-aos="fade-right">
+                <a href="#" class="btn btn-primary btn-lg">
+                    Test MVP
+                </a>
+                <a href="#" class="btn btn-outline-light btn-lg">
+                    Show Architecture
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="smart-contracts" class="content-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-up">
+                    <p class="content-subtitle">SMART CONTRACTS PLATFORM</p>
+                    <h2 class="content-title">
+                        SMART CONTRACTS &#8212; <br>
+                        <strong>CONTRACTS, LISTING & <br> REAL ESTATE CROWDSALE</strong>
+                    </h2>
+
+                    <p class="content-text">
+                        The Leaxcoin will be the largest global reference in Smart Contracts, not only for the innovating project it presents, but also for the tireless efforts of all people involved when it comes to integrating all the approved regulations for property transfer into the platform.
+                    </p>
+                    <p class="content-text">
+                        Security guarantee is the main focus, in order to ensure that every government regulation is followed in each jurisdiction.
+                    </p>
+                    <p class="content-text">
+                        By achieving these goals, we will be able to impact on the private sector and reach the State Department, always searching effective and quick ways to mitigate fraud risks.
+                    </p>
+                </div>
+                <div class="col-md-6" data-aos="fade-down">
+                    <div style="padding: 0 50px 0 50px">
+                        <img class="img-fluid img-floating" src="/img/smart-contracts.png" alt="Leaxcoin" style="margin-top: 0">
+                    </div>
+                </div>
+            </div>
+
+            <div id="smart-contracts-icons" class="row" data-aos="fade-up">
+                <div class="col-md-4">
+                    <div class="leax-icon-box">
+                        <div class="leax-icon">
+                            <img src="/img/icon-real-estate-contract.png" class="img-fluid">
+                        </div>
+                        <div class="leax-icon-text">
+                            <h4>REAL ESTATE CONTRACT <br> GLOBAL PLATFORM</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="leax-icon-box">
+                        <div class="leax-icon">
+                            <img src="/img/icon-privacy.png" class="img-fluid">
+                        </div>
+                        <div class="leax-icon-text">
+                            <h4>REAL ESTATE LISTING & <br>OPPORTUNITIES</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="leax-icon-box">
+                        <div class="leax-icon">
+                            <img src="/img/icon-crowd-sale.png" class="img-fluid">
+                        </div>
+                        <div class="leax-icon-text">
+                            <h4>CROWD SALE – REAL <br> ESTATE LAUNCHESDOTS</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="contract-buttons" data-aos="fade-right">
+                <a href="#" class="btn btn-primary btn-lg">
+                    Show Architecture
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="leaxcoin-wallet" class="content-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-right">
+                    <img src="./img/macbook-and-mobile.png" alt="Leaxcoin Wallet" class="section-img img-floating">
+                </div>
+                <div class="col-md-6" data-aos="fade-up">
+                    <div class="content-info-box">
+                        <p class="content-subtitle">WALLET OFFICIAL</p>
+                        <h2 class="content-title">
+                            OFFICIAL <strong>LEAXCOIN WALLET</strong> • <br>
+                            <strong>SECURITY & PRIVACY</strong>
+                        </h2>
+                        <p class="content-text">
+                            The Leax wallet will be fully developed on the Ethereum blockchain network, which is encrypted to avoid fraud and theft, having Send, Receive and Token Purchase functions.
+                        </p>
+
+                        <div class="leax-icon-box">
+                            <div class="leax-icon">
+                                <img src="/img/icon-security.png" class="img-fluid">
+                            </div>
+                            <div class="leax-icon-text">
+                                <h4>Security</h4>
+                                <p>The assets are locked in the local storage of the wallets, away from any server.</p>
+                            </div>
+                        </div>
+                        <div class="leax-icon-box">
+                            <div class="leax-icon">
+                                <img src="/img/icon-privacy.png" class="img-fluid">
+                            </div>
+                            <div class="leax-icon-text">
+                                <h4>PRIVACY</h4>
+                                <p>No personal data or private information is stored on any server.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="leaxcoin-wallet-buttons" class="text-center" data-aos="fade-up">
+                <a href="#" class="btn btn-outline-light btn-lg">
+                    Show Architecture
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="access-your-wallet" class="content-info" >
+        <div class="container">
+            <p class="content-subtitle">You use to send, receive & store your Leax.</p>
+            <h2 class="content-title">
+                Access Your <strong>Wallet</strong>
+            </h2>
+
+            <div id="platform-icons" class="row">
+                <div class="col-md-2 col-6" data-aos="fade-down">
+                    <a href="#" class="platform-icon-wrapper">
+                        <div class="platform-icon">
+                            <img src="/img/icon-web.png" alt="Web">
+                        </div>
+                        <h4 class="platform-icon-text">Web</h4>
+                    </a>
+                </div>
+                <div class="col-md-2 col-6" data-aos="fade-up">
+                    <a href="#" class="platform-icon-wrapper">
+                        <div class="platform-icon">
+                            <img src="/img/icon-android.png" alt="Android">
+                        </div>
+                        <h4 class="platform-icon-text">Android</h4>
+                    </a>
+                </div>
+                <div class="col-md-2 col-6" data-aos="fade-down">
+                    <a href="#" class="platform-icon-wrapper platform-icon-disabled">
+                        <div class="platform-icon">
+                            <img src="/img/icon-apple.png" alt="IOS">
+                        </div>
+                        <h4 class="platform-icon-text">
+                            IOS<br>
+                            <small>• Coming Soon •</small>
+                        </h4>
+                    </a>
+                </div>
+                <div class="col-md-2 col-6" data-aos="fade-up">
+                    <a href="#" class="platform-icon-wrapper">
+                        <div class="platform-icon">
+                            <img src="/img/icon-windows.png" alt="Windows">
+                        </div>
+                        <h4 class="platform-icon-text">Windows</h4>
+                    </a>
+                </div>
+                <div class="col-md-2 col-6" data-aos="fade-down">
+                    <a href="#" class="platform-icon-wrapper">
+                        <div class="platform-icon">
+                            <img src="/img/icon-linux.png" alt="Linux">
+                        </div>
+                        <h4 class="platform-icon-text">Linux</h4>
+                    </a>
+                </div>
+                <div class="col-md-2 col-6" data-aos="fade-up">
+                    <a href="#" class="platform-icon-wrapper">
+                        <div class="platform-icon">
+                            <img src="/img/icon-macos.png" alt="Mac OS">
+                        </div>
+                        <h4 class="platform-icon-text">Mac OS</h4>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="community-support" class="content-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-down">
+                    <p class="content-subtitle">DECENTRALIZED COMMUNITY</p>
+                    <h2 class="content-title">
+                        COMMUNITY & <strong>GLOBAL SUPPORT</strong>
+                    </h2>
+
+                    <p class="content-text">
+                        The Leaxcoin is very proud of being a real community with real estate specialists from all over the world. Together, we join forces to build a global community of the blockchain revolution enthusiasts, providing new resources to foment the real estate world revolution.
+                    </p>
+                    <p class="content-text">
+                        The community is actively encouraged and rewarded for getting involved in the development, marketing and real estate solutions.
+                    </p>
+                    <p class="content-text">
+                        <i><strong>If you want to join our community, become an ambassador in your city, state or country!</strong></i>
+                    </p>
+                </div>
+                <div class="col-md-6" data-aos="fade-up">
+                    <div style="padding: 0 20px 0 20px">
+                        <img class="img-fluid main-image " src="/img/global-support.png" alt="Leaxcoin">
+                    </div>
+                </div>
+            </div>
+
+            <div id="community-support-icons" class="row" data-aos="fade-right">
+                <div class="col-md-4">
+                    <div class="leax-icon-box">
+                        <div class="leax-icon">
+                            <img src="/img/icon-decentralized.png" class="img-fluid">
+                        </div>
+                        <div class="leax-icon-text">
+                            <h4>DECENTRALIZED <br> ORGANIZATION</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="leax-icon-box">
+                        <div class="leax-icon">
+                            <img src="/img/icon-ambassadors.png" class="img-fluid">
+                        </div>
+                        <div class="leax-icon-text">
+                            <h4>AMBASSADORS ALL <br> OVER THE WORLD</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="leax-icon-box">
+                        <div class="leax-icon">
+                            <img src="/img/icon-incentive.png" class="img-fluid">
+                        </div>
+                        <div class="leax-icon-text">
+                            <h4>INCENTIVE & <br> REWARD PROGRAMS</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contract" class="content-info">
+        <div class="container">
+            <div class="gist">
+                <iframe src="/gist" frameborder="no" width="100%" height="429"></iframe>
+                <div class="gist-bottom">
+                    <h5 class="gist-verified">Verified</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="the-roadmap" class="content-info">
+        <div class="container">
+            <p class="content-subtitle">Out Strategy</p>
+            <h2 class="content-title">
+                The <strong>Roadmap</strong>
+            </h2>
+            <p class="content-text">
+                The Leaxcoin Roadmap focuses on the development of the plataform, <br> operations, infrastructure, new partinerships and marketing initiatives.
+            </p>
+        </div>
+
+        <div id="timeline">
+            <ul>
+                <li class="passed first">
+                    <span class="first-text">
+                        <span>2017</span>
+                        <span>2018</span>
+                    </span>
+                    <span class="dot"></span>
+                    <div class="text text-top">
+                        <span class="text-year">2018/03</span>
+                        <span class="text-content">
+                            Registry Property
+                        </span>
+                    </div>
+                </li>
+                <li class="active">
+                    <span class="dot"></span>
+                    <div class="text text-bottom">
+                        <span class="text-year">2020 - Q2</span>
+                        <span class="text-content">
+                            Real estate listing
+                        </span>
+                    </div>
+                </li>
+                <li class="disabled">
+                    <span class="line"></span>
+                    <span class="dot"></span>
+                    <div class="text text-top">
+                        <span class="text-year">2020 - Q4</span>
+                        <span class="text-content">
+                            Crowdsale
+                        </span>
+                    </div>
+                </li>
+                <li class="disabled">
+                    <span class="line"></span>
+                    <span class="dot"></span>
+                    <div class="text text-bottom">
+                        <span class="text-year">2021 - Q1</span>
+                        <span class="text-content">
+                            Rewards Community
+                        </span>
+                    </div>
+                </li>
+                <li class="disabled">
+                    <span class="line"></span>
+                    <span class="dot"></span>
+                    <div class="text text-top">
+                        <span class="text-year">2021 - Q3</span>
+                        <span class="text-content">
+                            Community Engagement
+                        </span>
+                    </div>
+                </li>
+                <li class="disabled">
+                    <span class="line"></span>
+                    <span class="dot"></span>
+                    <div class="text text-bottom">
+                        <span class="text-year">2021 - Q4</span>
+                        <span class="text-content">
+                            Expansion of the Business
+                        </span>
+                    </div>
+                </li>
+                <li class="disabled">
+                    <span class="line"></span>
+                    <span class="dot"></span>
+                    <div class="text text-top">
+                        <span class="text-year">2021 - Q3</span>
+                        <span class="text-content">
+                            Community Engagement
+                        </span>
+                    </div>
+                </li>
+                <li class="disabled">
+                    <span class="line"></span>
+                    <span class="dot"></span>
+                    <div class="text text-bottom">
+                        <span class="text-year">2021 - Q4</span>
+                        <span class="text-content">
+                            Expansion of the Business
+                        </span>
+                    </div>
+                </li>
+                <li class="disabled">
+                    <span class="line"></span>
+                    <span class="dot"></span>
+                    <div class="text text-top">
+                        <span class="text-year">2021 - Q3</span>
+                        <span class="text-content">
+                            Community Engagement
+                        </span>
+                    </div>
+                </li>
+                <li class="disabled">
+                    <span class="line"></span>
+                    <span class="dot"></span>
+                    <div class="text text-bottom">
+                        <span class="text-year">2021 - Q4</span>
+                        <span class="text-content">
+                            Expansion of the Business
+                        </span>
+                    </div>
+                </li>
+                <li class="disabled">
+                    <span class="line"></span>
+                </li>
+            </ul>
+        </div>
+
+    </section>
+
+    <section id="contributors" class="content-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 offset-md-5" data-aos="fade-up">
+                    <p class="content-subtitle">Team</p>
+                    <h2 class="content-title">
+                        A <strong>Community-Based</strong> Initiative
+                    </h2>
+                    <p class="content-text">
+                        Leaxcoin is an open source project designed by a global community of totally self-funded and high qualified developers, engineers, designers, academics, economists and Blockchain cryptography enthusiasts, who have committed to taking the Leaxcoin to the main cryptocurrencies and making the decentralized technologies fully accessible to everybody.
+                    </p>
+
+                    <div class="row d-none d-sm-block">
+                        <div class="col-md-6 offset-md-3">
+                            <div class="dropdown" id="countries-dropdown">
+                                <button class="btn btn-lg btn-outline-light btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="map-wrapper">
+            <div id="map"></div>
+            <div id="contributor-box" class="d-none d-sm-block">
+                <div class="media">
+                    <img class="mr-3 rounded" src="">
+                    <div class="media-body">
+                        <div class="links">
+                            <a href="" target="_blank" class="link-telegram"><i class="fa fa-lg fa-paper-plane"></i></a>
+                            <a href="" target="_blank" class="link-twitter"><i class="fa fa-lg fa-twitter"></i></a>
+                            <span class="flag-icon flag-icon-us"></span>
+                        </div>
+                        <h5 class="mt-0">
+                            <span>David Scharf</span><br>
+                            <small>Ambassador</small>
+                        </h5>
+                        <p></p>
+                        <div class="buttons text-right">
+                            <button id="prev-contributor" type="button" class="btn btn-link">Prev</button>
+                            <button id="next-contributor" type="button" class="btn btn-link">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="team-buttons" class="text-center" data-aos="fade-down">
+            <a href="#" class="btn btn-primary btn-lg">
+                <i class="fa fa-lg fa-forumbee"></i>
+                Join our community
+            </a>
+        </div>
+    </section>
+
+
+    <footer class="content-info">
+        <div class="container text-center">
+            <div data-aos="fade-up">
+                <p class="content-subtitle">The Decentralized Future</p>
+                <h2 class="content-title">
+                    Join The <strong>LEAXCOIN PROJECT</strong>
+                </h2>
+                <p class="content-text">
+                    You can join the community by contributing with ideas, feedback,<br>
+                    codes, design, support and dissemination of the Leaxcoin Project <br>
+                    worldwide.
+                </p>
+                <p class="content-text">
+                    Visit our <strong><a href="https://github.com/Leax-Foundation" target="_blank">GitHub</a></strong> page to be a developer.
+                </p>
+                <p class="content-text">
+                    You are welcome to discuss any project related to Leaxcoin with our<br />
+                    friendly community in our <strong><a href="https://community.leax.io/" target="_blank">Forums</a></strong>.
+                </p>
+                <p class="content-text">
+                    Any contribution will be welcome.
+                </p>
+            </div>
+            
+            <div class="footer-logo">
+                <img src="./img/logo-footer.png" alt="Leaxcoin">
+            </div>
+
+            <div class="footer-links">
+                <a href="#" target="_blank"><i class="fa fa-lg fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fa fa-lg fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fa fa-lg fa-forumbee"></i></a>
+                <a href="#" target="_blank"><i class="fa fa-lg fa-paper-plane"></i></a>
+            </div>
+
+            <p class="footer-text">
+                Copyright © 2018 Leax Foundation – Leaxcoin (LEAX). All Rights Reserved <br>
+                <a href="mailto:contact@leax.io"><b>contact@leax.io</b></a>
+            </p>
+
+        </div>
+    </footer>
+
+
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <iframe width="100%" class="yvideo" height="450" src="https://www.youtube.com/embed/urt3ooxRaOg?enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="follow-us" class="d-none d-md-block" data-aos="fade-right">
+        <span class="text">Follow us</span>
+        <span class="line"></span>
+        <div class="links">
+            <a href="#"><i class="fa fa-lg fa-github"></i></a>
+            <a href="#"><i class="fa fa-lg fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-lg fa-forumbee"></i></a>
+        </div>
+        <div class="telegram">
+            <a href="#" class="btn btn-primary btn-circle"><i class="fa fa-lg fa-paper-plane"></i></a>
+        </div>
+    </div>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>

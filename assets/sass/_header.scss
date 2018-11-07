@@ -1,0 +1,46 @@
+header {
+    .navbar{
+        margin-top: 10px;
+        &.fixed-top {
+            margin-top: 0;
+            background-color: $dark-blue;
+            .navbar-brand img {
+                width: 60%;
+            }
+        }
+        .nav-item {
+            text-transform: uppercase;
+            font-size: 0.7em;
+            padding-left: 10px;
+            padding-right: 10px;
+            &.active a{
+                font-weight: 600;
+            }
+            .dropdown-item {
+                font-size: 0.7em;
+            }
+        }
+        .nav-link {
+            .flag-icon-border {
+                width: 27px;
+                height: 27px;
+                border: 2px solid $blue;
+                border-radius: 50%;
+                margin: -8px 5px 0 0;
+                display: inline-table;
+                float: left;
+            }
+            .flag-icon-background {
+                background-size: contain;
+                background-position: 50%;
+                background-repeat: no-repeat;
+                background-color: #000;
+                width: 21px;
+                height: 21px;
+                border-radius: 50%;
+                margin: 3px;
+                display: table;
+            }
+        }
+    }
+}

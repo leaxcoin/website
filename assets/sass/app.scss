@@ -1,0 +1,39 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "mixins";
+@import "variables";
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+
+// Font Awesome
+@import "node_modules/font-awesome/scss/font-awesome";
+
+// Font Montserrat
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+// Flags
+@import "node_modules/flag-icon-css/sass/flag-icon";
+
+// AOS
+@import "node_modules/aos/src/sass/aos";
+
+@import "preloader";
+@import "body";
+@import "header";
+@import "buttons";
+@import "main-text";
+@import "content-info";
+@import "the-following";
+@import "property-registry";
+@import "leax-icon";
+@import "smart-contracts";
+@import "community-support";
+@import "leaxcoin-wallet";
+@import "access-your-wallet";
+@import "contract";
+@import "the-roadmap";
+@import "footer";
+@import "video-modal";
+@import "follow-us";
+@import "timeline";
+@import "out-ecosystem";
+@import "contributors";
+@import "images";

@@ -1,0 +1,40 @@
+#property-registry {
+    .main-image-wrapper {
+        padding: 0 50px 0 50px;
+        img {
+            margin-top: -80px
+        }
+    }
+    #property-registry-buttons{
+        margin-top: 30px;
+        .btn:first-child {
+            margin-right: 20px;
+        }
+    }
+}
+
+#property-registry-icons {
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+
+@include media-breakpoint-down(xs) {
+    #property-registry {
+        .main-image-wrapper {
+            padding: 0;
+            img {
+                margin-top: -50px;
+                margin-bottom: 50px;
+            }
+        }
+        #property-registry-buttons{
+            margin-top: 30px;
+            .btn {
+                margin-bottom: 20px;
+            }
+            .btn:first-child {
+                margin-right: 0;
+            }
+        }
+    }
+}

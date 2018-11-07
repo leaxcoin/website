@@ -1,0 +1,24 @@
+body {
+    padding: 0;
+    background-image: url(/img/banner-bg.png), url(/img/bg-detail-1.png), url(/img/bg-detail-2.png), url(/img/bg-detail-5.png), url(/img/bg-detail-3.png), url(/img/bg-detail-4.png);
+    background-color: #101530;
+    background-size: 100% auto, 40% auto, 10% auto, 10% auto, 90% auto, 100% auto;
+    background-repeat: no-repeat;
+    background-position: center top, -100px 1100px, right 1500px, left 2500px, left 3700px, center 5700px;
+}
+
+body {
+    &.navbar-fixed-top {
+        padding-top: 77px;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    body {
+        padding: 0;
+        background-image: url(/img/banner-bg.png), url(/img/bg-detail-1.png), url(/img/bg-detail-2.png), url(/img/bg-detail-5.png), url(/img/bg-detail-3.png), url(/img/bg-detail-4.png);
+        background-size: 100% auto, 40% auto, 10% auto, 10% auto, 90% auto, 100% auto;
+        background-repeat: no-repeat;
+        background-position: center top, -100px 1100px, right 1500px, left 2500px, left 3600px, center 5350px;
+    }
+}
