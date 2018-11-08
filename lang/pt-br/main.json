@@ -1,3 +1,10 @@
 {
-    "title": "Leaxcoin - A Evolução do Blockchain para o mercado imobiliário"
+    "title": "Leaxcoin - A Evolução do Blockchain para o mercado imobiliário",
+    "mainText": {
+        "top": "A Evolução do Blockchain",
+        "typed": [
+            "Uma Nova Moeda.<br><strong>A Evolução do <br>Mercado Imobiliário</strong>",
+            "A Evolução do <br>Mercado Imobiliário.<br><strong>Uma Nova Moeda.</strong>"
+        ]
+    }
 }

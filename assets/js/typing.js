@@ -3,10 +3,7 @@ const Typed = require('typed.js');
 $(function () {
 
     new Typed("#typed-main-text", {
-        strings: [
-            "A New Currency. <br><strong>The Real Estate <br>Evolution.</strong>", 
-            "The Evolution Of The <br> Real Estate.<br><strong>A New Currency.</strong>", 
-        ],
+        stringsElement: "#typed-main-text-strings",
         typeSpeed: 70,
         backSpeed: 20,
         backDelay: 6000,

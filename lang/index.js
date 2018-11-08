@@ -12,7 +12,7 @@ const sections = [
 const data = {};
 
 available.forEach(lang => {
-    data[lang] = {};
+    data[lang] = {lang};
     sections.forEach(section => {
         data[lang][section] = require(`./${lang}/${section}.json`);
     });

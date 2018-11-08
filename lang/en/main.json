@@ -1,3 +1,10 @@
 {
-    "title": "Leaxcoin - The Evolution of Blockchain for the Real Estate"
+    "title": "Leaxcoin - The Evolution of Blockchain for the Real Estate",
+    "mainText": {
+        "top": "The Blockchain Evolution",
+        "typed": [
+            "A New Currency. <br><strong>The Real Estate <br>Evolution.</strong>",
+            "The Evolution Of The <br> Real Estate.<br><strong>A New Currency.</strong>"
+        ]
+    }
 }
