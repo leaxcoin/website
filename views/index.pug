@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+    title=main.title
+</head>
+<body>
+    
+    <div id="preloader-wrapper">
+        <div id="preloader">
+            <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+
+    <header>
+        <nav id="main-nav" class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#">
+                <img src="/img/logo.png" alt="Leaxcoin">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
+                <ul class="navbar-nav mr-auto"></ul>
+
+                <ul class="navbar-nav mr-auto">
+                    each item, index in main.menuItems
+                        li(class="nav-item " + item.active)
+                            a(class="nav-link",href=item.hash)=item.label
+                </ul>
+
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="flag-icon-border">
+                                if lang == "en"
+                                    <span class="flag-icon-background flag-icon-us flag-icon-squared"></span>
+                                else if lang == "pt-br"
+                                    <span class="flag-icon-background flag-icon-br flag-icon-squared"></span>
+                            </span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/en"><span class="flag-icon flag-icon-us"></span> English</a>
+                            <a class="dropdown-item" href="/pt-br"><span class="flag-icon flag-icon-br"></span> Português</a>
+                        </div>
+                    </li>
+                </ul>
+
+                <form class="form-inline">´
+                    button.btn.btn-outline-light(type="button")=main.walletWeb
+                </form>
+                
+            </div>
+        </nav>
+    </header>
+
+
+    <section id="main-text">
+        <div class="container text-center">
+            p#typed-top-text.top-text=main.mainText.top
+
+            <div id="typed-main-text-strings">
+                each text in main.mainText.typed
+                    p !{text}
+            </div>
+            <h1 id="typed-main-text"></h1>
+
+            p.bottom-text !{main.mainText.bottom}
+
+            <div class="video-button" data-aos="fade-down" data-aos-delay="800">
+                <button class="btn btn-primary btn-circle" data-toggle="modal" data-target="#videoModal">
+                    <i class="fa fa-lg fa-play"></i>
+                </button>
+                p.play-text=main.mainText.play
+            </div>
+        </div>
+    </section>
+
+    <section class="content-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up">
+                    <img class="img-fluid img-floating" src="/img/what-is-leaxcoin.png" alt="What Is Leaxcoin?">
+                </div>
+                <div class="col-md-8" data-aos="fade-down">
+                    p.content-subtitle=main.about.top
+                    h2.content-title !{main.about.title}
+                    each paragraph in main.about.paragraphs
+                        p.content-text !{paragraph}
+                    <a href="#" class="btn btn-primary btn-lg">
+                        <i class="fa fa-lg fa-book"></i> 
+                        span !{main.about.button}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-info" id="out-ecosystem">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-down">
+
+                    p.content-subtitle !{main.ecosystem.top}
+                    h2.content-title !{main.ecosystem.title}
+
+                    p.content-tags !{main.ecosystem.tags}
+
+                    each paragraph in main.ecosystem.paragraphs
+                        p.content-text !{paragraph}
+                </div>
+                <div class="col-md-6" data-aos="fade-up">
+                    <img class="img-fluid img-floating" src="/img/graph.png" alt="Leaxcoin">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="the-following" class="content-info" data-aos="fade-up">
+        <div class="container">
+            <div class="text-center">
+                p.content-subtitle !{main.following.top}
+                h2.content-title !{main.following.title}
+            </div>
+            <div id="platform-items" class="row">
+                each item in main.following.icons
+                    div.col-md-3.text-center
+                        div.platform-item-img
+                            img(src=item.img, alt=item.label, class="img-fluid hidden")
+                        h3 !{item.label}
+            </div>
+        </div>
+    </section>
+
+
+    <section id="property-registry" class="content-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-up">
+                    <div class="main-image-wrapper">
+                        <img class="img-fluid img-floating" src="/img/property-registry-platform.png" alt="Leaxcoin">
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-down">
+                    p.content-subtitle !{main.propertyRegistry.top}
+                    h2.content-title !{main.propertyRegistry.title}
+
+                    each paragraph in main.propertyRegistry.paragraphs
+                        p.content-text !{paragraph}
+                </div>
+            </div>
+
+            <div id="property-registry-icons" class="row" data-aos="fade-up">
+                each item in main.propertyRegistry.icons
+                    div.col-md-4
+                        div.leax-icon-box
+                            div.leax-icon
+                                img(src=item.img, class="img-fluid")
+                            div.leax-icon-text
+                                h4 !{item.label}
+            </div>
+
+            <div id="property-registry-buttons" class="text-center" data-aos="fade-right">
+                a(href="#", class="btn btn-primary btn-lg") !{main.propertyRegistry.button1}
+                a(href="#", class="btn btn-outline-light btn-lg") !{main.propertyRegistry.button2}
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="smart-contracts" class="content-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-up">
+                    p.content-subtitle !{main.smartContracts.top}
+                    h2.content-title !{main.smartContracts.title}
+
+                    each paragraph in main.smartContracts.paragraphs
+                        p.content-text !{paragraph}
+                </div>
+                <div class="col-md-6" data-aos="fade-down">
+                    <div style="padding: 0 50px 0 50px">
+                        <img class="img-fluid img-floating" src="/img/smart-contracts.png" alt="Leaxcoin" style="margin-top: 0">
+                    </div>
+                </div>
+            </div>
+
+            <div id="smart-contracts-icons" class="row" data-aos="fade-up">
+                <div class="col-md-4">
+                    <div class="leax-icon-box">
+                        <div class="leax-icon">
+                            <img src="/img/icon-real-estate-contract.png" class="img-fluid">
+                        </div>
+                        <div class="leax-icon-text">
+                            h4 !{main.smartContracts.icon1}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="leax-icon-box">
+                        <div class="leax-icon">
+                            <img src="/img/icon-privacy.png" class="img-fluid">
+                        </div>
+                        <div class="leax-icon-text">
+                            h4 !{main.smartContracts.icon2}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="leax-icon-box">
+                        <div class="leax-icon">
+                            <img src="/img/icon-crowd-sale.png" class="img-fluid">
+                        </div>
+                        <div class="leax-icon-text">
+                            h4 !{main.smartContracts.icon3}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="contract-buttons" data-aos="fade-right">
+                a.btn.btn-primary.btn-lg(href="#") !{main.smartContracts.button}
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="leaxcoin-wallet" class="content-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-right">
+                    <img src="./img/macbook-and-mobile.png" alt="Leaxcoin Wallet" class="section-img img-floating">
+                </div>
+                <div class="col-md-6" data-aos="fade-up">
+                    <div class="content-info-box">
+                        p.content-subtitle !{main.wallet.top}
+                        h2.content-title !{main.wallet.title}
+
+                        each paragraph in main.wallet.paragraphs
+                            p.content-text !{paragraph}
+
+                        <div class="leax-icon-box">
+                            <div class="leax-icon">
+                                <img src="/img/icon-security.png" class="img-fluid">
+                            </div>
+                            <div class="leax-icon-text">
+                                h4 !{main.wallet.icon2.title}
+                                p !{main.wallet.icon2.description}
+                            </div>
+                        </div>
+                        <div class="leax-icon-box">
+                            <div class="leax-icon">
+                                <img src="/img/icon-privacy.png" class="img-fluid">
+                            </div>
+                            <div class="leax-icon-text">
+                                h4 !{main.wallet.icon2.title}
+                                p !{main.wallet.icon2.description}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="leaxcoin-wallet-buttons" class="text-center" data-aos="fade-up">
+                a.btn.btn-outline-light.btn-lg(href="#") !{main.wallet.button}
+            </div>
+
+        </div>
+    </section>
+
+    <section id="access-your-wallet" class="content-info" >
+        <div class="container">
+            p.content-subtitle !{main.access.top}
+            h2.content-title !{main.access.title}
+
+            <div id="platform-icons" class="row">
+                <div class="col-md-2 col-6" data-aos="fade-down">
+                    <a href="#" class="platform-icon-wrapper">
+                        <div class="platform-icon">
+                            <img src="/img/icon-web.png" alt="Web">
+                        </div>
+                        <h4 class="platform-icon-text">Web</h4>
+                    </a>
+                </div>
+                <div class="col-md-2 col-6" data-aos="fade-up">
+                    <a href="#" class="platform-icon-wrapper">
+                        <div class="platform-icon">
+                            <img src="/img/icon-android.png" alt="Android">
+                        </div>
+                        <h4 class="platform-icon-text">Android</h4>
+                    </a>
+                </div>
+                <div class="col-md-2 col-6" data-aos="fade-down">
+                    <a href="#" class="platform-icon-wrapper platform-icon-disabled">
+                        <div class="platform-icon">
+                            <img src="/img/icon-apple.png" alt="IOS">
+                        </div>
+                        h4.platform-icon-text IOS
+                            br
+                            small !{"• "+ main.access.comingSoon +" •"}
+                    </a>
+                </div>
+                <div class="col-md-2 col-6" data-aos="fade-up">
+                    <a href="#" class="platform-icon-wrapper">
+                        <div class="platform-icon">
+                            <img src="/img/icon-windows.png" alt="Windows">
+                        </div>
+                        <h4 class="platform-icon-text">Windows</h4>
+                    </a>
+                </div>
+                <div class="col-md-2 col-6" data-aos="fade-down">
+                    <a href="#" class="platform-icon-wrapper">
+                        <div class="platform-icon">
+                            <img src="/img/icon-linux.png" alt="Linux">
+                        </div>
+                        <h4 class="platform-icon-text">Linux</h4>
+                    </a>
+                </div>
+                <div class="col-md-2 col-6" data-aos="fade-up">
+                    <a href="#" class="platform-icon-wrapper">
+                        <div class="platform-icon">
+                            <img src="/img/icon-macos.png" alt="Mac OS">
+                        </div>
+                        <h4 class="platform-icon-text">Mac OS</h4>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="community-support" class="content-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-down">
+                    p.content-subtitle !{main.communitySupport.top}
+                    h2.content-title !{main.communitySupport.title}
+
+                    each paragraph in main.communitySupport.paragraphs
+                        p.content-text !{paragraph}
+                </div>
+                <div class="col-md-6" data-aos="fade-up">
+                    <div style="padding: 0 20px 0 20px">
+                        <img class="img-fluid main-image " src="/img/global-support.png" alt="Leaxcoin">
+                    </div>
+                </div>
+            </div>
+
+            <div id="community-support-icons" class="row" data-aos="fade-right">
+                <div class="col-md-4">
+                    <div class="leax-icon-box">
+                        <div class="leax-icon">
+                            <img src="/img/icon-decentralized.png" class="img-fluid">
+                        </div>
+                        <div class="leax-icon-text">
+                            h4 !{main.communitySupport.icon1}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="leax-icon-box">
+                        <div class="leax-icon">
+                            <img src="/img/icon-ambassadors.png" class="img-fluid">
+                        </div>
+                        <div class="leax-icon-text">
+                            h4 !{main.communitySupport.icon2}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="leax-icon-box">
+                        <div class="leax-icon">
+                            <img src="/img/icon-incentive.png" class="img-fluid">
+                        </div>
+                        <div class="leax-icon-text">
+                            h4 !{main.communitySupport.icon3}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contract" class="content-info">
+        <div class="container">
+            <div class="gist">
+                <iframe src="/gist.html" frameborder="no" width="100%" height="429"></iframe>
+                <div class="gist-bottom">
+                    h5.gist-verified !{main.contract.verified}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="the-roadmap" class="content-info">
+        <div class="container">
+            p.content-subtitle !{main.roadmap.top}
+            h2.content-title !{main.roadmap.title}
+
+            each paragraph in main.roadmap.paragraphs
+                p.content-text !{paragraph}
+        </div>
+
+        <div id="timeline">
+            <ul>
+                each item, index in main.roadmap.timeline
+                    li(class=item.class)
+                        if index == 0
+                            span.first-text
+                                span 2017
+                                span 2018
+                        span.dot
+                        if item.class == "disabled"
+                            span.line
+                        div(class="text text-" + item.position)
+                            span.text-year !{item.year}
+                            span.text-content !{item.content}
+                <li class="disabled">
+                    <span class="line"></span>
+                </li>
+            </ul>
+        </div>
+
+    </section>
+
+    <section id="contributors" class="content-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 offset-md-5" data-aos="fade-up">
+                    p.content-subtitle !{main.team.top}
+                    h2.content-title !{main.team.title}
+
+                    each paragraph in main.team.paragraphs
+                        p.content-text !{paragraph}
+
+                    <div class="row d-none d-sm-block">
+                        <div class="col-md-6 offset-md-3">
+                            <div class="dropdown" id="countries-dropdown">
+                                <button class="btn btn-lg btn-outline-light btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="map-wrapper">
+            <div id="map"></div>
+            <div id="contributor-box" class="d-none d-sm-block">
+                <div class="media">
+                    <img class="mr-3 rounded" src="">
+                    <div class="media-body">
+                        <div class="links">
+                            <a href="" target="_blank" class="link-telegram"><i class="fa fa-lg fa-paper-plane"></i></a>
+                            <a href="" target="_blank" class="link-twitter"><i class="fa fa-lg fa-twitter"></i></a>
+                            <span class="flag-icon flag-icon-us"></span>
+                        </div>
+                        <h5 class="mt-0">
+                            <span></span><br>
+                            <small></small>
+                        </h5>
+                        <p></p>
+                        <div class="buttons text-right">
+                            <button id="prev-contributor" type="button" class="btn btn-link">
+                                =main.team.prev
+                            </button>
+                            <button id="next-contributor" type="button" class="btn btn-link">
+                                =main.team.next
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="team-buttons" class="text-center" data-aos="fade-down">
+            <a href="#" class="btn btn-primary btn-lg">
+                <i class="fa fa-lg fa-forumbee"></i>
+                =" " + main.team.button
+            </a>
+        </div>
+    </section>
+
+
+    <footer class="content-info">
+        <div class="container text-center">
+            <div data-aos="fade-up">
+                p.content-subtitle !{main.footer.top}
+                h2.content-title !{main.footer.title}
+
+                each paragraph in main.footer.paragraphs
+                    p.content-text !{paragraph}
+            </div>
+            
+            <div class="footer-logo">
+                <img src="./img/logo-footer.png" alt="Leaxcoin">
+            </div>
+
+            <div class="footer-links">
+                <a href="#" target="_blank"><i class="fa fa-lg fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fa fa-lg fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fa fa-lg fa-forumbee"></i></a>
+                <a href="#" target="_blank"><i class="fa fa-lg fa-paper-plane"></i></a>
+            </div>
+
+            p.footer-text !{main.footer.bottom}
+
+        </div>
+    </footer>
+
+
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <iframe width="100%" class="yvideo" height="450" src="https://www.youtube.com/embed/urt3ooxRaOg?enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="follow-us" class="d-none d-md-block" data-aos="fade-right">
+        <span class="text">
+            =main.followUs
+        </span>
+        <span class="line"></span>
+        <div class="links">
+            <a href="#"><i class="fa fa-lg fa-github"></i></a>
+            <a href="#"><i class="fa fa-lg fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-lg fa-forumbee"></i></a>
+        </div>
+        <div class="telegram">
+            <a href="#" class="btn btn-primary btn-circle"><i class="fa fa-lg fa-paper-plane"></i></a>
+        </div>
+    </div>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>

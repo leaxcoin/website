@@ -1,10 +1,156 @@
 {
     "title": "Leaxcoin - A Evolução do Blockchain para o mercado imobiliário",
+    "menuItems": [
+        {"label": "Leax Foundation", "hash": "#leax", "active": "active"},
+        {"label": "Wallets", "hash": "#wallets"},
+        {"label": "Comunidade", "hash": "#community"},
+        {"label": "Plataformas", "hash": "#platforms"},
+        {"label": "Roadmap", "hash": "#roadmap"},
+        {"label": "Whitepaper", "hash": "#whitepaper"},
+        {"label": "Contato", "hash": "#contact"}
+    ],
+    "followUs": "Siga-nos",
+    "walletWeb": "Wallet Web",
     "mainText": {
         "top": "A Evolução do Blockchain",
         "typed": [
             "Uma Nova Moeda.<br><strong>A Evolução do <br>Mercado Imobiliário</strong>",
             "A Evolução do <br>Mercado Imobiliário.<br><strong>Uma Nova Moeda.</strong>"
         ]
+    },
+    "about": {
+        "top": "Sobre a moeda",
+        "title": "O que é a <strong>Leaxcoin</strong>?",
+        "paragraphs": [
+            "Away with all the real estate transaction problems! A strong currency in the world! <strong>Leaxcoin</strong> is a decentralized global currency that adopts the Ethereum blockchain technology, the leader in the smart contract evolution. The <strong>Leaxcoin</strong> platform comes up with the solution to all the problems with real estate transactions, either in the purchase, rent, lease and real estate launch or in the property registry.",
+            "The success of the <strong>Leaxcoin</strong> platform will be totally achieved with a global community of real estate specialists and experienced developers, who will create the necessary tools to connect all the real estate processes and the regulatory agencies of property registration for a blockchain, everything in compliance with the countless jurisdictions of every country, state and city."
+        ],
+        "button": "Ler Whitepaper"
+    },
+    "ecosystem": {
+        "top": "A Plataforma",
+        "title": "Out Ecosystem A <br><strong>Global Community</strong>",
+        "tags": "INVESTORS  •  TRADITIONAL REAL ESTATE NEGOTIATORS <br> OWNERS  •  BROKERS  •  REAL ESTATE AGENTS  •  ORGANIZATIONS <br> REGISTRY OFFICES  •  REAL ESTATE  •  AGENCIES <br> REAL ESTATE SPECIALISTS  •  DEVELOPERS",
+        "paragraphs": [
+            "Everybody together, creating an integrated encompassing ecosystem <br> to facilitate the real estate process inclusion in the blockchain.",
+            "<i><strong>ONE-STOP THAT HOSTS ALL THE REAL ESTATE PROCESSES</strong></i>",
+            "In this way, the Leaxcoin makes it possible to unify all the traditional and cryptographic investment, ensuring faster speed in the process with less bureaucracy.",
+            "And all this in a totally DECENTRALIZED GLOBAL COMMUNITY format!"
+        ]
+    },
+    "following": {
+        "top": "Our Platform",
+        "title": "The following <br> <strong>Elements As The Main Focus</strong>:",
+        "icons": [
+            {"label": "Property Registry","img": "/img/property-registry.png"},
+            {"label": "Contracts, Listing & <br> Real Estate Crowdsale","img": "/img/contracts.png"},
+            {"label": "Official Leaxcoin Wallet","img": "/img/leaxcoin-wallet.png"},
+            {"label": "Community & <br> Global Support","img": "/img/community-support.png"}
+        ]
+    },
+    "propertyRegistry": {
+        "top": "Property Registry Platform",
+        "title": "Property <strong>Registry</strong>",
+        "paragraphs": [
+            "The entire platform environment is intended for local and global communities, with tools, applications and solutions to a full integration with registry, notary and government institutions, following the local jurisdiction for the transfer of title deeds.",
+            "The Leaxcoin platform is protected by blockchain, ensuring an unchangeable database.",
+            "<i><strong>As the information and document security is our <br> number 1 priority!</strong></i>"
+        ],
+        "icons": [
+            {"label": "SIMPLE, EASY & <br> INTUITIVE SYSTEM","img": "/img/icon-simple-easy.png"},
+            {"label": "Real Estate REGISTRY <br> INTERACTION & MAINTENANCE","img": "/img/icon-real-estate-registry.png"},
+            {"label": "LARGE GLOBAL <br> COMMUNITY","img": "/img/icon-large-community.png"}
+        ],
+        "button1": "Test MVP",
+        "button2": "Show Architecture"
+    },
+    "smartContracts": {
+        "top": "SMART CONTRACTS PLATFORM",
+        "title": "SMART CONTRACTS &#8212; <br> <strong>CONTRACTS, LISTING & <br> REAL ESTATE CROWDSALE</strong>",
+        "paragraphs": [
+            "The Leaxcoin will be the largest global reference in Smart Contracts, not only for the innovating project it presents, but also for the tireless efforts of all people involved when it comes to integrating all the approved regulations for property transfer into the platform.",
+            "Security guarantee is the main focus, in order to ensure that every government regulation is followed in each jurisdiction.",
+            "By achieving these goals, we will be able to impact on the private sector and reach the State Department, always searching effective and quick ways to mitigate fraud risks."
+        ],
+        "icon1": "REAL ESTATE CONTRACT <br> GLOBAL PLATFORM",
+        "icon2": "REAL ESTATE LISTING & <br>OPPORTUNITIES",
+        "icon3": "CROWD SALE – REAL <br> ESTATE LAUNCHESDOTS",
+        "button": "Show Architecture"
+    },
+    "wallet": {
+        "top": "WALLET OFFICIAL",
+        "title": "OFFICIAL <strong>LEAXCOIN WALLET</strong> • <br> <strong>SECURITY & PRIVACY</strong>",
+        "paragraphs": [
+            "The Leax wallet will be fully developed on the Ethereum blockchain network, which is encrypted to avoid fraud and theft, having Send, Receive and Token Purchase functions."
+        ],
+        "icon1": {
+            "title": "Security",
+            "description": "The assets are locked in the local storage of the wallets, away from any server."
+        },
+        "icon2": {
+            "title": "PRIVACY",
+            "description": "No personal data or private information is stored on any server."
+        },
+        "button": "Show Architecture"
+    },
+    "access": {
+        "top": "You use to send, receive & store your Leax.",
+        "title": "Access Your <strong>Wallet</strong>",
+        "comingSoon": "Coming Soon"
+    },
+    "communitySupport": {
+        "top": "DECENTRALIZED COMMUNITY",
+        "title": "COMMUNITY & <strong>GLOBAL SUPPORT</strong>",
+        "paragraphs": [
+            "The Leaxcoin is very proud of being a real community with real estate specialists from all over the world. Together, we join forces to build a global community of the blockchain revolution enthusiasts, providing new resources to foment the real estate world revolution.",
+            "The community is actively encouraged and rewarded for getting involved in the development, marketing and real estate solutions.",
+            "<i><strong>If you want to join our community, become an ambassador in your city, state or country!</strong></i>"
+        ],
+        "icon1": "DECENTRALIZED <br> ORGANIZATION",
+        "icon2": "AMBASSADORS ALL <br> OVER THE WORLD",
+        "icon3": "INCENTIVE & <br> REWARD PROGRAMS"
+    },
+    "contract": {
+        "verified": "Verified"
+    },
+    "roadmap": {
+        "top": "Out Strategy",
+        "title": "The <strong>Roadmap</strong>",
+        "paragraphs": [
+            "The Leaxcoin Roadmap focuses on the development of the plataform, <br> operations, infrastructure, new partinerships and marketing initiatives."
+        ],
+        "timeline": [
+            {"class": "passed first", "position": "top", "year": "2018/03", "content": "Registry Property"},
+            {"class": "active", "position": "bottom", "year": "2020 - Q2", "content": "Real estate listing"},
+            {"class": "disabled", "position": "top", "year": "2020 - Q4", "content": "Crowdsale"},
+            {"class": "disabled", "position": "bottom", "year": "2021 - Q1", "content": "Rewards Community"},
+            {"class": "disabled", "position": "top", "year": "2021 - Q3", "content": "Community Engagement"},
+            {"class": "disabled", "position": "bottom", "year": "2021 - Q4", "content": "Expansion of the Business"},
+            {"class": "disabled", "position": "top", "year": "2020 - Q4", "content": "Crowdsale"},
+            {"class": "disabled", "position": "bottom", "year": "2021 - Q1", "content": "Rewards Community"},
+            {"class": "disabled", "position": "top", "year": "2021 - Q3", "content": "Community Engagement"},
+            {"class": "disabled", "position": "bottom", "year": "2021 - Q4", "content": "Expansion of the Business"}
+        ]
+    },
+    "team": {
+        "top": "Team",
+        "title": "A <strong>Community-Based</strong> Initiative",
+        "paragraphs": [
+            "Leaxcoin is an open source project designed by a global community of totally self-funded and high qualified developers, engineers, designers, academics, economists and Blockchain cryptography enthusiasts, who have committed to taking the Leaxcoin to the main cryptocurrencies and making the decentralized technologies fully accessible to everybody."
+        ],
+        "next": "Next",
+        "prev": "Prev",
+        "button": "Join Our Community"
+    },
+    "footer": {
+        "top": "The Decentralized Future",
+        "title": "Join The <strong>LEAXCOIN PROJECT</strong>",
+        "paragraphs": [
+            "You can join the community by contributing with ideas, feedback,<br> codes, design, support and dissemination of the Leaxcoin Project <br> worldwide.",
+            "Visit our <strong><a href=\"https://github.com/Leax-Foundation\" target=\"_blank\">GitHub</a></strong> page to be a developer.",
+            "You are welcome to discuss any project related to Leaxcoin with our<br /> friendly community in our <strong><a href=\"https://community.leax.io/\" target=\"_blank\">Forums</a></strong>.",
+            "Any contribution will be welcome."
+        ],
+        "bottom": "Copyright © 2018 Leax Foundation – Leaxcoin (LEAX). All Rights Reserved <br> <a href=\"mailto:contact@leax.io\"><b>contact@leax.io</b></a>"
     }
 }

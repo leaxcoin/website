@@ -2,10 +2,6 @@ const langService = require('../services/lang.service');
 
 module.exports = app => {
 
-    app.get('/gist', (req, res) => {
-        res.render('gist');
-    });
-
     app.get('/data', langService.middleware, (req, res) => {
         let lang = req.session.savedLang;
         let data = langService.getData(lang);
